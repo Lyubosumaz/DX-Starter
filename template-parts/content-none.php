@@ -9,7 +9,7 @@
 
 ?>
 
-<section class="no-results not-found">
+<div class="no-results not-found">
 	<header class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'dxstarter' ); ?></h1>
 	</header><!-- .page-header -->
@@ -34,4 +34,4 @@
 
 		endif; ?>
 	</div><!-- .page-content -->
-</section><!-- .no-results -->
+</div><!-- .no-results -->
