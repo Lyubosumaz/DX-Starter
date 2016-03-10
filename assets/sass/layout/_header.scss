@@ -3,15 +3,15 @@
 	// height: $layout-header-height;
 }
 
-.site-navigation {
+.main-navigation {
 	display: inline-block;
 
 	.menu-toggle {
-		padding: 6px 0;
 		line-height: 1;
 		font-size: 26px;
 		display: inline-block;
-		margin-top: -5px;
+		background: none;
+		border: none;
 
 		&:hover {
 			color: $color-primary;

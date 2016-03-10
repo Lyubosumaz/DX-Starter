@@ -15,7 +15,7 @@ jQuery( document ).ready( function ( $ ) {
 		var selector = {
 			menuIcon: $( ".menu-toggle" ),
 			dropdownArrow: $( "span.dropdown-arrow" ),
-			menuNav: $('.site-navigation'),
+			menuNav: $('.main-navigation'),
 			wavesButtonSelector: '.button'
 		};
 

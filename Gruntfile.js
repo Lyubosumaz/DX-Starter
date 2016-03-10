@@ -55,7 +55,6 @@ module.exports = function (grunt) {
 						// 'assets/scripts/owl.carousel.min.js',
 						'assets/scripts/navigation.js',
 						'assets/scripts/skip-link-focus.js',
-						'assets/scripts/customizer.js',
 						'assets/scripts/scripts.js'
 					]
 				}

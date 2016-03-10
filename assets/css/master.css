@@ -1215,32 +1215,32 @@ hr.clear {
 .site-header {
   position: relative; }
 
-.site-navigation {
+.main-navigation {
   display: inline-block; }
-  .site-navigation .menu-toggle {
-    padding: 6px 0;
+  .main-navigation .menu-toggle {
     line-height: 1;
     font-size: 26px;
     display: inline-block;
-    margin-top: -5px; }
-    .site-navigation .menu-toggle:hover {
+    background: none;
+    border: none; }
+    .main-navigation .menu-toggle:hover {
       color: #4072db;
       cursor: pointer; }
-  .site-navigation .menu-item {
+  .main-navigation .menu-item {
     display: inline-block;
     margin-right: 20px;
     position: relative;
     font-weight: bold; }
-    .site-navigation .menu-item:last-of-type {
+    .main-navigation .menu-item:last-of-type {
       margin-right: 0; }
-    .site-navigation .menu-item a {
+    .main-navigation .menu-item a {
       color: black; }
-  .site-navigation .menu-item-has-children:hover > .sub-menu {
+  .main-navigation .menu-item-has-children:hover > .sub-menu {
     display: block; }
-  .site-navigation .menu-primary-container {
+  .main-navigation .menu-primary-container {
     float: right; }
   @media (max-width: 640px) {
-    .site-navigation .menu-primary-container {
+    .main-navigation .menu-primary-container {
       display: none;
       position: absolute;
       left: 0;
@@ -1249,52 +1249,52 @@ hr.clear {
       width: 100%;
       border-bottom: 1px solid #ddd;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
-    .site-navigation.is-extended .menu-primary-container {
+    .main-navigation.is-extended .menu-primary-container {
       display: block; }
-    .site-navigation.is-extended .menu-primary {
+    .main-navigation.is-extended .menu-primary {
       opacity: 1;
       -webkit-transform: translateY(0);
               transform: translateY(0);
       pointer-events: auto; }
-    .site-navigation .menu-item {
+    .main-navigation .menu-item {
       border-bottom: 1px solid #f0f0f0;
       margin: 0;
       display: block; }
-      .site-navigation .menu-item a {
+      .main-navigation .menu-item a {
         display: block;
         padding: 0.5rem 0.625rem; }
-      .site-navigation .menu-item a:hover {
+      .main-navigation .menu-item a:hover {
         color: #4072db; }
-    .site-navigation .menu-item-has-children .dropdown-arrow {
+    .main-navigation .menu-item-has-children .dropdown-arrow {
       height: 2.625rem;
       width: 2.625rem;
       line-height: 2.625rem;
       padding: 0; }
-    .site-navigation .sub-menu {
+    .main-navigation .sub-menu {
       border-top: 1px solid #f0f0f0;
       background: #f0f0f0; } }
   @media (min-width: 640px) {
-    .site-navigation .menu-toggle {
+    .main-navigation .menu-toggle {
       display: none; }
-    .site-navigation .menu-primary-container {
+    .main-navigation .menu-primary-container {
       display: block; }
-    .site-navigation .sub-menu {
+    .main-navigation .sub-menu {
       pointer-events: none;
       opacity: 0;
       -webkit-transition: 0.2s;
               transition: 0.2s;
       -webkit-transform: translateY(40px);
               transform: translateY(40px); }
-    .site-navigation li {
+    .main-navigation li {
       position: relative; }
-    .site-navigation li:hover > .sub-menu {
+    .main-navigation li:hover > .sub-menu {
       opacity: 1;
       pointer-events: auto;
       -webkit-transition: 0.2s;
               transition: 0.2s;
       -webkit-transform: translateY(0);
               transform: translateY(0); }
-    .site-navigation .sub-menu {
+    .main-navigation .sub-menu {
       position: absolute;
       border: 1px solid #ccc;
       top: 27px;
@@ -1302,16 +1302,16 @@ hr.clear {
       max-width: 200px;
       text-align: left;
       z-index: 99; }
-      .site-navigation .sub-menu a {
+      .main-navigation .sub-menu a {
         display: block;
         padding: 8px 13px;
         font-size: 13px;
         font-weight: normal;
         color: black; }
-        .site-navigation .sub-menu a:hover {
+        .main-navigation .sub-menu a:hover {
           background: transparent;
           color: #4072db; }
-      .site-navigation .sub-menu li {
+      .main-navigation .sub-menu li {
         width: 100%;
         border-bottom: 1px solid #f0f0f0;
         float: none;

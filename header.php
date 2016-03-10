@@ -44,8 +44,12 @@
 				</div><!-- .site-branding -->
 
 				<nav id="site-navigation" class="main-navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'dxstarter' ); ?></button>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+						<i class="fa fa-reorder"></i>
+					</button>
+					<div class="menu-primary-container">
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+					</div><!-- .menu-primary-container -->
 				</nav><!-- #site-navigation -->
 			</div>
 		</div>
