@@ -24,7 +24,7 @@ module.exports = function (grunt) {
 
 		watch: {
 			scripts: {
-				files: ['assets/**/*.js'],
+				files: ['assets/**/*.js', '!assets/scripts/scripts.min.js'],
 				tasks: ['jshint', 'uglify'],
 			},
 			css: {
