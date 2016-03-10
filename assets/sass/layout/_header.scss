@@ -1,12 +1,9 @@
 .site-header {
-	padding: 15px 0;
-	border-bottom: 1px solid #ddd;
 	position: relative;
-	height: $layout-header-height;
+	// height: $layout-header-height;
 }
 
 .site-navigation {
-	margin-top: 5px;
 	display: inline-block;
 
 	.menu-toggle {

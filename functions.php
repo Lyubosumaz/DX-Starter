@@ -149,3 +149,11 @@ function dxstarter_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'dxstarter_scripts' );
+
+/**
+ * Remove the margin-top styling added to the HTML tag by default from WordPress
+ */
+function dxstarter_remove_html_margin() {
+	remove_action( 'wp_head', '_admin_bar_bump_cb' );
+}
+add_action( 'get_header', 'dxstarter_remove_html_margin' );
