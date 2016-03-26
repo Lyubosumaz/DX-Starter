@@ -27,11 +27,11 @@
 
 
 // Any other module that can be reused multuple times.
-@import "components/mobile-menu";
 @import "components/buttons";
 @import "components/sections";
 @import "components/elements";
 @import "components/input";
+@import "components/mobile-menu";
 
 
 // If there is anything specific for a page it should be in this folder
