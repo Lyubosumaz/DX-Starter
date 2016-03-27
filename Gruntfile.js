@@ -48,14 +48,17 @@ module.exports = function (grunt) {
 		uglify: {
 			target: {
 				files: { 
+					// Output file
 					'assets/scripts/scripts.min.js':
 					[
-						'assets/scripts/modernizr.min.js',
-						// 'assets/scripts/headroom.min.js',
-						// 'assets/scripts/owl.carousel.min.js',
-						'assets/scripts/navigation.js',
-						'assets/scripts/skip-link-focus.js',
-						'assets/scripts/scripts.js'
+						// The primary scripts.js file for most general small things.
+						'assets/scripts/scripts.js', 
+						
+						// All include files. Used for nicer separation.
+						'assets/scripts/inc/**/*.js',
+						
+						// Detect browser supported technologies. Custom build might be required.
+						'assets/scripts/vendor/modernizr.min.js'
 					]
 				}
 			}
