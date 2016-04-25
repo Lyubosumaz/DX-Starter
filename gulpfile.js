@@ -6,6 +6,7 @@ var gulp = require('gulp'),
 gulp.task('sass', function(){
 	return gulp.src('assets/sass/**/*.scss')
 	    .pipe(sass())
+		.pipe(autoprefixer())
     	.pipe(gulp.dest('assets/css/'));
 });
 
