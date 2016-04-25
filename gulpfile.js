@@ -7,7 +7,8 @@ gulp.task('sass', function(){
 	return gulp.src('assets/sass/**/*.scss')
 	    .pipe(sass())
 		.pipe(autoprefixer())
-    	.pipe(gulp.dest('assets/css/'));
+    	.pipe(gulp.dest('assets/css/'))
+		.pipe(notify("Sass compiled."));
 });
 
 gulp.task('watch', ['sass'], function() {
