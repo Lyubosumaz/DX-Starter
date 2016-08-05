@@ -141,11 +141,12 @@ add_action( 'widgets_init', 'dxstarter_widgets_init' );
  * Enqueue scripts and styles.
  */
 function dxstarter_scripts() {
-	wp_enqueue_style( 'dxstarter-style', get_template_directory_uri() . '/assets/css/master.css' );
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css' );
-	
 
-	wp_enqueue_script( 'dxstarter-navigation', get_template_directory_uri() . '/assets/scripts/scripts.min.js', array( "jquery" ), '20151215', true );
+	// Enqueue the only styling file here that is build with Gulp
+	wp_enqueue_style( 'dxstarter-style', get_template_directory_uri() . '/assets/css/master.css' );
+
+	// And the only JS file that is build with Gulp
+	wp_enqueue_script( 'dxstarter-scripts', get_template_directory_uri() . '/assets/scripts/bundle.min.js', array( "jquery" ), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
