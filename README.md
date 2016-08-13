@@ -2,8 +2,9 @@
 
 ### Nodejs
 
-You will need Node.js - Installing it gives you access to NPM. 
-If you don't have the latest version, make sure you get it installed. Upgrading already installed Node.js is trough NPM :
+You will need Node.js - Installing it gives you access to NPM. If you don't have the latest version, make sure you get it installed as it's very likley to get errors if you are not running the latest version. The current node version under which this theme is tested is `v5.0.0`. You can check your version by running `& node -v`.
+
+**Updating installed Node.js is trough NPM :**
  
 ```
 $ sudo npm cache clean -f
@@ -27,7 +28,7 @@ Run `$ npm install`. This will create `node_modules` folder. Don't worry, it is 
 
 ### Compile Sass without npm
 
-If you have `sass` command installed, you can run 
+If you have `sass` command installed, you can run `sass --watch assets/sass/master.scss:assets/css/master.min.css --style compressed` to compile only the sass file. For JavaScript you will have to use gulp.
 
 ## Note:
 
