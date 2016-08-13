@@ -18,5 +18,6 @@ wp-content/plugins/hello.php
 
 node_modules/
 assets/sass/.cache-location
+assets/css/*.map
 .sass-cache/
 npm-debug.log

@@ -143,11 +143,11 @@ body.is-menu-opened {
 		box-shadow: $menu-container-shadow;
 	}
 
-	&.is-extended .menu-primary-container {
+	.is-extended .menu-primary-container {
 		display: block;
 	}
 
-	&.is-extended .menu-primary {
+	.is-extended .menu-primary {
 		opacity: 1;
 		transform: translateY(0);
 		pointer-events: auto;

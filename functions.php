@@ -143,7 +143,7 @@ add_action( 'widgets_init', 'dxstarter_widgets_init' );
 function dxstarter_scripts() {
 
 	// Enqueue the only styling file here that is build with Gulp
-	wp_enqueue_style( 'dxstarter-style', get_template_directory_uri() . '/assets/css/master.css' );
+	wp_enqueue_style( 'dxstarter-style', get_template_directory_uri() . '/assets/css/master.min.css' );
 
 	// And the only JS file that is build with Gulp
 	wp_enqueue_script( 'dxstarter-scripts', get_template_directory_uri() . '/assets/scripts/bundle.min.js', array( "jquery" ), '20151215', true );
