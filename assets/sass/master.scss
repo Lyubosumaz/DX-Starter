@@ -13,6 +13,10 @@
 @import "base/general";
 @import "base/helpers";
 
+// This should not interfere with the theme, so if you
+// comment it out nothing will break.
+@import "base/styleguide";
+
 // The Foundation 6.0 grid system
 @import "foundation/foundation";
 

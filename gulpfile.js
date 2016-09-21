@@ -1,15 +1,15 @@
 var gulp = require('gulp'),
-    sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
-	notify = require('gulp-notify'),
 	livereload = require('gulp-livereload'),
+    sass = require('gulp-sass'),
+	notify = require('gulp-notify'),
 	uglify = require('gulp-uglify'),
 	concat = require('gulp-concat'),
-	imagemin = require('gulp-imagemin'),
+	cssmin = require('gulp-cssmin'),
     rename = require('gulp-rename'),
+	imagemin = require('gulp-imagemin'),
 	del = require('del'),
 	moment = require('moment');
-
 
 gulp.task('sass', function(){
 	return gulp.src('assets/sass/**/*.scss')
@@ -31,6 +31,14 @@ gulp.task('scripts', function() {
 		.pipe(notify({ message: 'Scripts task complete <%= file.relative %>' }));
 });
 
+gulp.task('cssmin', function () {
+	gulp.src('assets/css/master.css')
+		.pipe(cssmin())
+		.pipe(rename({suffix: '.min'}))
+		.pipe(gulp.dest('assets/css'))
+		.pipe(notify({ message: 'Successfully minified master.min.css' }));
+});
+
 // The files to be watched for minifying. If more dev js files are added this
 // will have to be updated.
 gulp.task('watch', ['sass', 'scripts'], function() {
@@ -38,6 +46,7 @@ gulp.task('watch', ['sass', 'scripts'], function() {
 
 	gulp.watch('assets/sass/**/*.scss', ['sass']);
 	gulp.watch('assets/scripts/scripts.js', ['scripts', 'minifyScripts']);
+	gulp.watch('assets/css/master.css', ['cssmin']);
 });
 
 // First combine, then minify all the listed scripts in two files.
@@ -59,7 +68,7 @@ gulp.task('minifyScripts', function () {
 });
 
 // What will be run with simply writing "$ gulp"
-gulp.task('default', ['sass', 'watch', 'minifyScripts']);
+gulp.task('default', ['sass', 'watch', 'minifyScripts', 'cssmin']);
 
 
 // Print the current date formatted. Used for the script compile notify messages.
