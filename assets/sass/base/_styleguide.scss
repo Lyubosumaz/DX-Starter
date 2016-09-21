@@ -30,8 +30,12 @@
 	}
 
 	.colorbox {
-		flex: 1 0 10%;
+		display: inline-block;
 		margin: 10px;
+		max-width: calc(10% - 20px);
+		width: 100%;
+
+		@media (max-width: 640px) { max-width: calc(50% - 20px) }
 		
 		// By default make them faded out.
 		& > * { opacity: 0.2; }
@@ -43,6 +47,12 @@
 		.name {
 			font-size: 13px;
 		}
+	}
+
+	.label {
+		text-transform: uppercase;
+		margin: 20px 0;
+		display: block;
 	}
 }
 
