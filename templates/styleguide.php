@@ -121,42 +121,42 @@
 					<div class="theme-colors">
 						<div class="colorbox color-primary">
 							<div class="color"></div><!-- .color -->
-							<code class="name">.color-primary</code>
+							<code class="name">$color-primary</code>
 						</div><!-- .colorbox -->
 
 						<div class="colorbox color-secondary">
 							<div class="color"></div><!-- .color -->
-							<code class="name">.color-secondary</code>
+							<code class="name">$color-secondary</code>
 						</div><!-- .colorbox -->
 
 						<div class="colorbox color-accent">
 							<div class="color"></div><!-- .color -->
-							<code class="name">.color-accent</code>
+							<code class="name">$color-accent</code>
 						</div><!-- .colorbox -->
 
 						<div class="colorbox color-neutral-dark">
 							<div class="color"></div><!-- .color -->
-							<code class="name">.color-neutral-dark</code>
+							<code class="name">$color-neutral-dark</code>
 						</div><!-- .colorbox -->
 
 						<div class="colorbox color-neutral-light">
 							<div class="color"></div><!-- .color -->
-							<code class="name">.color-neutral-light</code>
+							<code class="name">$color-neutral-light</code>
 						</div><!-- .colorbox -->
 
 						<div class="colorbox color-divider">
 							<div class="color"></div><!-- .color -->
-							<code class="name">.color-divider</code>
+							<code class="name">$color-divider</code>
 						</div><!-- .colorbox -->
 
 						<div class="colorbox color-text-body">
 							<div class="color"></div><!-- .color -->
-							<code class="name">.color-text-body</code>
+							<code class="name">$color-text-body</code>
 						</div><!-- .colorbox -->
 
 						<div class="colorbox color-text-muted">
 							<div class="color"></div><!-- .color -->
-							<code class="name">.color-text-muted</code>
+							<code class="name">$color-text-muted</code>
 						</div><!-- .colorbox -->
 					</div><!-- .theme-colors -->
 				</div><!-- .column small-4 medium-2 -->
