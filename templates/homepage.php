@@ -13,6 +13,4 @@ get_header(); ?>
 
 <?php // Custom page template structure ?>
 
-<?php get_template_part( 'snippets/flex-grid' ); ?>
-
 <?php get_footer(); ?>
