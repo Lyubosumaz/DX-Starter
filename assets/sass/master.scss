@@ -6,7 +6,7 @@
 
 
 // All general settings and utils
-@import "base/variables";
+@import "base/settings";
 @import "base/mixins";
 @import "base/normalize";
 @import "base/fonts";
@@ -41,3 +41,7 @@
 @import "pages/404";
 @import "pages/single";
 @import "pages/search";
+
+// TESTING AREA
+// ----------------------------------------------------------------------------
+@import "prebuilds/header-clean.scss";

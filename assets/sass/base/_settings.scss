@@ -4,11 +4,8 @@ $global-font-size: 16px;
 $global-width: 1200px;
 
 
-// Custom media query breakpoints.
-$breakpoint-mobile: 480px;
-
-
 // Standart set media queries
+$breakpoint-mobile: 480px;
 $breakpoint-small: 	640px;
 $breakpoint-medium: 960px;
 $breakpoint-large: 	1200px;
@@ -30,8 +27,7 @@ $color-secondary: $color-green; 	// Blue
 $color-accent: $color-orange;		// Orange
 
 
-
 // Fonts
 $font-serif: Georgia, "Times New Roman", serif;
-$font-sans: Noto, "Open Sans", sans-serif;
-$font-heading: Montserrat, Helvetica, sans-serif;
+$font-sans: "Open Sans", sans-serif;
+$font-heading: "Open Sans", Helvetica, sans-serif;
