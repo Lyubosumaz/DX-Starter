@@ -3442,6 +3442,10 @@ hr.clear {
     .menu-item-has-children .dropdown-arrow {
       display: none; } }
 
+/**
+ * Clean basic header styling with logo on the left and menu on the right
+ * with white background and subtle shadow.
+ */
 .site-header {
   padding: 30px 0;
   box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.1); }
@@ -3495,3 +3499,52 @@ hr.clear {
         display: block; }
       .sub-menu .menu-item a:hover {
         background: none; } }
+
+/**
+ * Various flex grid stylings that can be used across the theme.
+ * Very good for archive pages. Of course, the foundation grid is
+ * also a good choice here, but this is giving a bit more controll
+ * and is alowing you to add custom sizings and media queries without
+ * distrubting the stylings of foundation.
+ */
+.flex-grid-wrapper .flex-grid {
+  margin: 0 -20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.flex-grid-wrapper .grid-item {
+  padding: 0 20px; }
+
+.flex-grid-wrapper .col-4 .grid-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 calc(100% / 4);
+          flex: 1 1 calc(100% / 4); }
+
+.flex-grid-wrapper .col-3 .grid-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 calc(100% / 3);
+          flex: 1 1 calc(100% / 3); }
+
+.flex-grid-wrapper .col-2 .grid-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 calc(100% / 2);
+          flex: 1 1 calc(100% / 2); }
+
+@media (max-width: 960px) {
+  .flex-grid-wrapper .col-2 .grid-item,
+  .flex-grid-wrapper .col-3 .grid-item,
+  .flex-grid-wrapper .col-4 .grid-item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 calc(100% / 2);
+            flex: 1 1 calc(100% / 2); } }
+
+@media (max-width: 640px) {
+  .flex-grid-wrapper .col-2 .grid-item,
+  .flex-grid-wrapper .col-3 .grid-item,
+  .flex-grid-wrapper .col-4 .grid-item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 calc(100% / 1);
+            flex: 1 1 calc(100% / 1); } }
