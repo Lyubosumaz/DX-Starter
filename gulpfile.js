@@ -68,13 +68,6 @@ gulp.task('minifyScripts', function () {
 		.pipe(gulp.dest('assets/scripts/'));
 });
 
-// Front-end regression testing script runner
-gulp.task('phantomcss', function (){
-	gulp.src('./tests/views/testsuite.js')
-		.pipe(phantomcss())
-		.pipe(notify({ message: 'Finished running front-end tests' }));;
-});
-
 // What will be run with simply writing "$ gulp"
 gulp.task('default', ['sass', 'watch', 'minifyScripts', 'cssmin']);
 

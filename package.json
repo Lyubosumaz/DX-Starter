@@ -26,7 +26,8 @@
     "phantomjs-prebuilt": "^2.1.13"
   },
   "scripts": {
-    "test": "casperjs test tests/views/tests.js"
+    "test": "casperjs test tests/views/tests.js",
+    "test-cleanup": "rm -rf ./tests/views/screenshots ./tests/views/results"
   },
   "author": "DevriX",
   "license": "ISC",
