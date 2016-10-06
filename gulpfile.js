@@ -8,6 +8,7 @@ var gulp = require('gulp'),
 	cssmin = require('gulp-cssmin'),
     rename = require('gulp-rename'),
 	imagemin = require('gulp-imagemin'),
+	phantomcss = require('gulp-phantomcss'),
 	del = require('del'),
 	moment = require('moment');
 
@@ -65,6 +66,13 @@ gulp.task('minifyScripts', function () {
 		.pipe(rename('bundle.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('assets/scripts/'));
+});
+
+// Front-end regression testing script runner
+gulp.task('phantomcss', function (){
+	gulp.src('./tests/views/testsuite.js')
+		.pipe(phantomcss())
+		.pipe(notify({ message: 'Finished running front-end tests' }));;
 });
 
 // What will be run with simply writing "$ gulp"
