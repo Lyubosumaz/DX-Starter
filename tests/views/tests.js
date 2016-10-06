@@ -78,6 +78,7 @@ casper.test.begin('Homepage', function(test) {
 
 	// where will we test. Fill in the '' to test different pages
 	casper.start(DOMAIN + '');
+	casper.echo('> Testing on page: ' + DOMAIN, 'WARNING');
 
 	// On what size shaw we make the tests.
 	casper.viewport(1366, 768); // 35%	world-wide usage
@@ -85,8 +86,12 @@ casper.test.begin('Homepage', function(test) {
 	// begin testing:
 	// ----------------------------------------------------
 	casper.then(function() {
-		// Screenshot the whole body element
-		phantomcss.screenshot('body', 'Full Homepage Screenshot');
+		// Screenshot the whole body element and save in file 'Full Homepage Screenshot'
+		// phantomcss.screenshot('body', 'Full Homepage Screenshot');
+		
+		// Main site components
+		phantomcss.screenshot('.site-header', 'site-header');
+		phantomcss.screenshot('.site-footer', 'site-footer');
 	});
 
 	// end testing and compare results
