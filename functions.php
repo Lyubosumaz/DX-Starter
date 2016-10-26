@@ -33,6 +33,11 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+/**
+ * Better support for responsive images out of the box
+ */
+require get_template_directory() . '/inc/images.php';
+
 
 if ( ! function_exists( 'dxstarter_setup' ) ) :
 /**
@@ -68,6 +73,15 @@ function dxstarter_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
+
+	/**
+	 * Sample post thumbnail sizes. Change these to fit your theme
+	 * 
+	 * @since  DX Starter 1.1.0
+	 */
+	add_image_size( 'featured', 960, 720 ); 	// Featured image
+	add_image_size( 'thumb-l', 640, 480 ); 		// Thumbnail size large
+	add_image_size( 'thumb-m', 255 ); 			// Thumbnail size small
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(

@@ -27,3 +27,10 @@ function dxstarter_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'dxstarter_body_classes' );
+
+function dxdump( $var, $text = '' ) {
+	echo "<strong style='background: #ff0; display: block; margin-top: 10px; margin-bottom: -20px; padding: 0 10px; border: 2px solid #f00'>dxdump: $text</strong>";
+	echo "<pre style='background: #f0f0f0; padding: 10px; overflow: scroll; border: 2px solid #f00;'>";
+	var_dump( $var );
+	echo "</pre>";
+}

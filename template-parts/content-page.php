@@ -14,6 +14,8 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
+	<?php dxstarter_featured_image( 'featured' ); ?>
+
 	<div class="entry-content">
 		<?php
 			the_content();

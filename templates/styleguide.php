@@ -321,12 +321,12 @@
 			<div class="row">
 				<div class="column small-12 medium-6">
 					<h3>Column 1/2</h3>
-					<img src="https://dummyimage.com/1000x400/f7f7f7/dbdbdb.png&text=Example+image+-+1000x400" alt="" />
+					<img class="responsive-image" src="https://dummyimage.com/1000x400/f7f7f7/dbdbdb.png&text=Example+image+-+1000x400" alt="" />
 				</div><!-- .column -->
 
 				<div class="column small-12 medium-6">
 					<h3>Column 1/2</h3>
-					<img src="https://dummyimage.com/1000x400/f7f7f7/dbdbdb.png&text=Example+image+-+1000x400" alt="" />
+					<img class="responsive-image" src="https://dummyimage.com/1000x400/f7f7f7/dbdbdb.png&text=Example+image+-+1000x400" alt="" />
 				</div><!-- .column -->
 			</div><!-- .row -->
 		</div><!-- .dxstarter-styleguide -->

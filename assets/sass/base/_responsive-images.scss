@@ -1,0 +1,28 @@
+// New responsive images design. The goal is to make images
+// that will fit always everywhere with equal height so that
+// they can be reused in grids keeping the same aspect ratio.
+// 
+// ============================================================
+// 
+// Create modifiers and change the values if you want different
+// aspect ratios.
+$aspect-ratio-main: percentage( 3 / 4 );
+
+.responsive-image {
+	overflow: hidden;
+	padding-bottom: $aspect-ratio-main;
+	width: 100%;
+	height: 0;
+	display: inline-block;
+	position: relative;
+
+	// Styling that can be removed:
+	background: #f8f8f8;
+
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;	
+		position: absolute;
+	}
+}

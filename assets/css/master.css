@@ -153,6 +153,82 @@ td, th {
 meta.foundation-data-attribute-namespace {
   font-family: false; }
 
+body,
+button,
+input,
+select,
+textarea {
+  color: #404040;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both; }
+
+p {
+  margin-bottom: 1.5em; }
+
+dfn,
+cite,
+em,
+i {
+  font-style: italic; }
+
+blockquote {
+  margin: 0 1.5em; }
+
+address {
+  margin: 0 0 1.5em; }
+
+pre {
+  background: #eee;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em; }
+
+code,
+kbd,
+tt,
+var {
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-size: 15px;
+  font-size: 0.9375rem; }
+
+abbr,
+acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help; }
+
+mark,
+ins {
+  background: #fff9c0;
+  text-decoration: none; }
+
+big {
+  font-size: 125%; }
+
+dt {
+  font-weight: bold; }
+
+dd {
+  margin: 0 1.5em 1.5em; }
+
+table {
+  margin: 0 0 1.5em;
+  width: 100%; }
+
 html {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased; }
@@ -340,82 +416,6 @@ object {
 
 .gallery-caption {
   display: block; }
-
-body,
-button,
-input,
-select,
-textarea {
-  color: #404040;
-  font-family: sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.5; }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  clear: both; }
-
-p {
-  margin-bottom: 1.5em; }
-
-dfn,
-cite,
-em,
-i {
-  font-style: italic; }
-
-blockquote {
-  margin: 0 1.5em; }
-
-address {
-  margin: 0 0 1.5em; }
-
-pre {
-  background: #eee;
-  font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 15px;
-  font-size: 0.9375rem;
-  line-height: 1.6;
-  margin-bottom: 1.6em;
-  max-width: 100%;
-  overflow: auto;
-  padding: 1.6em; }
-
-code,
-kbd,
-tt,
-var {
-  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-  font-size: 15px;
-  font-size: 0.9375rem; }
-
-abbr,
-acronym {
-  border-bottom: 1px dotted #666;
-  cursor: help; }
-
-mark,
-ins {
-  background: #fff9c0;
-  text-decoration: none; }
-
-big {
-  font-size: 125%; }
-
-dt {
-  font-weight: bold; }
-
-dd {
-  margin: 0 1.5em 1.5em; }
-
-table {
-  margin: 0 0 1.5em;
-  width: 100%; }
 
 /**
  * Place ul element in the middle of its parent. The structure
@@ -617,6 +617,20 @@ hr.clear {
 
 .dxstarter-styleguide .color-accent .color {
   background-color: #ff4902; }
+
+.responsive-image {
+  overflow: hidden;
+  padding-bottom: 75%;
+  width: 100%;
+  height: 0;
+  display: inline-block;
+  position: relative;
+  background: #f8f8f8; }
+  .responsive-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute; }
 
 .foundation-mq {
   font-family: "small=0em&medium=32em&large=64em&xlarge=75em&xxlarge=90em"; }
@@ -3441,110 +3455,3 @@ hr.clear {
   @media (min-width: 640px) {
     .menu-item-has-children .dropdown-arrow {
       display: none; } }
-
-/**
- * Clean basic header styling with logo on the left and menu on the right
- * with white background and subtle shadow.
- */
-.site-header {
-  padding: 30px 0;
-  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.1); }
-  .site-header-inner {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
-
-.site-description {
-  display: none; }
-
-.site-title,
-.site-branding {
-  margin: 0; }
-
-.main-navigation {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto; }
-  .main-navigation .menu-item a {
-    padding: 0.75rem 0.625rem;
-    color: #1a1a1a;
-    background-color: #fff;
-    border-radius: 0.1875rem; }
-  .main-navigation .menu-item a:hover {
-    color: #1a1a1a;
-    background-color: #f0f0f0; }
-
-@media (min-width: 640px) {
-  .menu-item:nth-last-child(-n+3) .sub-menu .sub-menu {
-    right: calc(100%);
-    top: -0.625rem; }
-  .sub-menu {
-    box-shadow: 0 7px 13px -9px rgba(0, 0, 0, 0.1);
-    padding: 1.25rem 0;
-    font-size: 14px;
-    min-width: 250px; }
-    .sub-menu .menu-item {
-      margin: 0;
-      padding: 0;
-      border: none; }
-      .sub-menu .menu-item:last-of-type {
-        margin-bottom: 0; }
-      .sub-menu .menu-item a {
-        padding: 0.3125rem 1.25rem;
-        display: block; }
-      .sub-menu .menu-item a:hover {
-        background: none; } }
-
-/**
- * Various flex grid stylings that can be used across the theme.
- * Very good for archive pages. Of course, the foundation grid is
- * also a good choice here, but this is giving a bit more controll
- * and is alowing you to add custom sizings and media queries without
- * distrubting the stylings of foundation.
- */
-.flex-grid-wrapper .flex-grid {
-  margin: 0 -20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
-
-.flex-grid-wrapper .grid-item {
-  padding: 0 20px; }
-
-.flex-grid-wrapper .col-4 .grid-item {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 calc(100% / 4);
-          flex: 1 1 calc(100% / 4); }
-
-.flex-grid-wrapper .col-3 .grid-item {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 calc(100% / 3);
-          flex: 1 1 calc(100% / 3); }
-
-.flex-grid-wrapper .col-2 .grid-item {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 calc(100% / 2);
-          flex: 1 1 calc(100% / 2); }
-
-@media (max-width: 960px) {
-  .flex-grid-wrapper .col-2 .grid-item,
-  .flex-grid-wrapper .col-3 .grid-item,
-  .flex-grid-wrapper .col-4 .grid-item {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 calc(100% / 2);
-            flex: 1 1 calc(100% / 2); } }
-
-@media (max-width: 640px) {
-  .flex-grid-wrapper .col-2 .grid-item,
-  .flex-grid-wrapper .col-3 .grid-item,
-  .flex-grid-wrapper .col-4 .grid-item {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 calc(100% / 1);
-            flex: 1 1 calc(100% / 1); } }
