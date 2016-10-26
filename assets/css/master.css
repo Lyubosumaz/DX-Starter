@@ -631,6 +631,30 @@ hr.clear {
     width: 100%;
     height: 100%;
     position: absolute; }
+  .responsive-image.ratio-16-9 {
+    padding-bottom: 56.25%; }
+  .responsive-image.ratio-16-10 {
+    padding-bottom: 62.5%; }
+  .responsive-image.ratio-11-8 {
+    padding-bottom: 72.72727%; }
+  .responsive-image.ratio-3-2 {
+    padding-bottom: 66.66667%; }
+  .responsive-image.ratio-1-1 {
+    padding-bottom: 10000%; }
+  .responsive-image.ratio-golden {
+    padding-bottom: 61.8047%; }
+  .responsive-image.ratio-silver {
+    padding-bottom: 41.42502%; }
+  .responsive-image.radius-3 {
+    border-radius: 3px; }
+  .responsive-image.radius-5 {
+    border-radius: 5px; }
+  .responsive-image.radius-10 {
+    border-radius: 10px; }
+  .responsive-image.radius-20 {
+    border-radius: 20x; }
+  .responsive-image.radius-circle {
+    border-radius: 50%; }
 
 .foundation-mq {
   font-family: "small=0em&medium=32em&large=64em&xlarge=75em&xxlarge=90em"; }
