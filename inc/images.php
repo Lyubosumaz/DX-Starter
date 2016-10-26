@@ -44,9 +44,6 @@ function dxstarter_featured_image( $size, $class = '', $attr = '' ) {
 		$class = '';
 	}
 
-	$width = $size[0];
-	dxdump( $size, 'dump_01' );
-
 	// Print the HTML of the image
 	echo "<picture class='entry-featured-image responsive-image ${class}'>";
 	
