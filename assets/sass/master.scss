@@ -45,7 +45,10 @@
 @import "pages/single";
 @import "pages/search";
 
-// TESTING AREA
+// Comment out what you don't need
 // ----------------------------------------------------------------------------
-// @import "prebuilds/header-clean.scss";
-// @import "prebuilds/flex-grid.scss";
+@import "prebuilds/header-clean.scss";
+@import "prebuilds/flex-grid.scss";
+@import "prebuilds/section-heading.scss";
+@import "prebuilds/section-halfsplit.scss";
+@import "prebuilds/section-hero.scss";

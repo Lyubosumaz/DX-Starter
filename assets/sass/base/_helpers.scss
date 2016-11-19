@@ -47,6 +47,13 @@ hr.clear { border: none; background: transparent; clear: both; }
 	a:hover { color: white; }
 }
 
+.truncate {
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
 /**
  * Quick margin classes
  */

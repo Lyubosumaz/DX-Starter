@@ -5,9 +5,11 @@
  * and is alowing you to add custom sizings and media queries without
  * distrubting the stylings of foundation.
  */
-$flex-grid-gutter: 40px;
-
 .flex-grid-wrapper {
+	$flex-grid-gutter: 40px;
+	$border-color: #f0f0f0;
+	$border-color-inverted: #444;
+
 
 	.flex-grid {
 		margin: 0 #{-$flex-grid-gutter / 2};
@@ -45,5 +47,24 @@ $flex-grid-gutter: 40px;
 		.col-4 .grid-item {
 			flex: 1 1 calc(100% / 1);
 		}
+	}
+
+	// Modifiers
+	// ------------------
+	&.separators {
+		overflow: hidden;
+
+		.grid-item {
+			border-right: 1px solid $border-color;
+			border-bottom: 1px solid $border-color;
+			margin-right: -1px;
+			margin-bottom: -2px;
+			padding: $flex-grid-gutter;
+		}
+	}
+
+	.inverted &.separators .grid-item {
+		border-right: 1px solid $border-color-inverted;
+		border-bottom: 1px solid $border-color-inverted;
 	}
 }

@@ -88,6 +88,7 @@ img.aligncenter {
 img {
 	max-width: 100%;
 	height: auto;
+	margin-bottom: -8px; // Fixes weird spacing under images
 }
 
 /**
