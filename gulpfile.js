@@ -67,6 +67,22 @@ gulp.task('minifyScripts', function () {
 		.pipe(gulp.dest('assets/scripts/'));
 });
 
+gulp.task('cleanup', function() {
+	// This will take care of rights permission errors
+	// Do not delete assets/scripts/scripts.js, that's the working file :)
+	del([
+		'assets/scripts/bundle.js',
+		'assets/scripts/bundle.min.js',
+		'assets/scripts/scripts.min.js'
+	]);
+
+	// In case the scripts.js file has been added on root
+	del('scripts.js');
+
+	// Delete all css files and regenerate them again
+	del('assets/css/*.css');
+});
+
 // What will be run with simply writing "$ gulp"
 gulp.task('default', ['sass', 'watch', 'minifyScripts', 'cssmin']);
 
