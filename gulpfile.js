@@ -83,6 +83,15 @@ gulp.task('cleanup', function() {
 	del('assets/css/*.css');
 });
 
+// Will delete .git files so that you can use it on your own repository
+gulp.task('reset', function() {
+	del('.git');
+	del('.DS_Store');
+
+	// @TODO: create a command that will rename all functions and comments
+	// to use the one the developer needs.
+});
+
 // What will be run with simply writing "$ gulp"
 gulp.task('default', ['sass', 'watch', 'minifyScripts', 'cssmin']);
 
