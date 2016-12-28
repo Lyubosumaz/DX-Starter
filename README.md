@@ -1,15 +1,19 @@
 # Development setup
 
+## .gitignore
+
+DX Starter has a rather large .gitignore file. Make sure to check it out in case you have important file types or directories listed there. Part of the TODO for the theme is to create npm script that will auto generate a ZIP of your theme that is fully compatible with WordPress's theme standarts - meaning no .DS_Store files, no hidden .git folders or files, no gulp files or sass ones.
+
 ### Nodejs
 
 You will need Node.js - Installing it gives you access to NPM. If you don't have the latest version, make sure you get it installed as it's very likley to get errors if you are not running the latest version. The current node version under which this theme is tested is `v5.0.0`. You can check your version by running `& node -v`.
 
 **Updating installed Node.js is trough NPM :**
- 
+
 ```
 $ sudo npm cache clean -f
 $ sudo npm install -g n
-$ sudo n stable 
+$ sudo n stable
 ```
 
 If you have not installed Node.js yet then you will simply get the latest version and work from there.

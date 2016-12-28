@@ -67,8 +67,8 @@ gulp.task('minifyScripts', function () {
 		.pipe(gulp.dest('assets/scripts/'));
 });
 
+// This will take care of rights permission errors
 gulp.task('cleanup', function() {
-	// This will take care of rights permission errors
 	// Do not delete assets/scripts/scripts.js, that's the working file :)
 	del([
 		'assets/scripts/bundle.js',
