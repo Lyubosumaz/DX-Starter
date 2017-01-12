@@ -76,7 +76,7 @@ function dxstarter_setup() {
 
 	/**
 	 * Sample post thumbnail sizes. Change these to fit your theme
-	 * 
+	 *
 	 * @since  DX Starter 1.1.0
 	 */
 	add_image_size( 'featured', 960, 720 ); 	// Featured image
@@ -156,11 +156,16 @@ add_action( 'widgets_init', 'dxstarter_widgets_init' );
  */
 function dxstarter_scripts() {
 
+	$suffix = '.min';
+	if ( defined('SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG) {
+		$suffix = '';
+	}
+
 	// Enqueue the only styling file here that is build with Gulp
-	wp_enqueue_style( 'dxstarter-style', get_template_directory_uri() . '/assets/css/master.min.css' );
+	wp_enqueue_style( 'clobalt-style', get_template_directory_uri() . '/assets/css/master' . $suffix . '.css' );
 
 	// And the only JS file that is build with Gulp
-	wp_enqueue_script( 'dxstarter-scripts', get_template_directory_uri() . '/assets/scripts/bundle.min.js', array( "jquery" ), '20151215', true );
+	wp_enqueue_script( 'clobalt-scripts', get_template_directory_uri() . '/assets/scripts/bundle' . $suffix . '.js', array( "jquery" ), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
