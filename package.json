@@ -23,7 +23,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gulp": "./node_modules/.bin/gulp"
+    "gulp": "./node_modules/.bin/gulp",
+    "ziptheme": "bash zip.sh"
   },
   "author": "DevriX",
   "license": "ISC",
