@@ -17,7 +17,7 @@
  */
 ?>
 
-<section class="section-halfsplit">
+<section class="section-fullwidth section-halfsplit">
 	<div class="section-image product-preview" style="background-color: #FFA5A5;">
 		<img src="http://localhost/devrix/wp-content/themes/devrix-v2/assets/images/showcase-masonry.png" alt="Theme - Masonry">
 	</div><!-- .image -->
@@ -28,7 +28,7 @@
 	</div><!-- .content -->
 </section>
 
-<section class="section-halfsplit image-right">
+<section class="section-fullwidth section-halfsplit image-right">
 	<div class="section-image product-preview" style="background-color: #FFA5A5;">
 		<img src="http://localhost/devrix/wp-content/themes/devrix-v2/assets/images/showcase-masonry.png" alt="Theme - Masonry">
 	</div><!-- .image -->

@@ -32,6 +32,12 @@
         background: black;
         color: white;
     }
+    &.text-white {
+        color: white;
+        a {
+            color: white;
+        }
+    }
 }
 
 

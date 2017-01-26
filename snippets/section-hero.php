@@ -14,7 +14,7 @@
  * 		...
  */
 ?>
-<section class="section-hero">
+<section class="section-fullwidth section-hero">
 	<div class="section-content">
 		<div class="row">
 			<div class="column">

@@ -418,18 +418,11 @@ object {
 .gallery-caption {
   display: block; }
 
-/**
- * Place ul element in the middle of its parent. The structure
- * .center-ul > ul must be followed in order to work. (uds)
- */
 .center-ul {
   text-align: center; }
   .center-ul > ul {
     display: inline-block; }
 
-/**
- * WordPress required styling
- */
 .float-right {
   float: right; }
 
@@ -451,9 +444,6 @@ hr.clear {
   background: transparent;
   clear: both; }
 
-/**
- * Text Modifiers
- */
 .text-right {
   text-align: right; }
 
@@ -484,9 +474,6 @@ hr.clear {
   text-overflow: ellipsis;
   white-space: nowrap; }
 
-/**
- * Quick margin classes
- */
 .mt-0 {
   margin-top: 0 !important; }
 
@@ -553,9 +540,6 @@ hr.clear {
 .mb-100 {
   margin-bottom: 100px; }
 
-/**
- * Helpful on .columns classes
- */
 .position-initial {
   position: initial; }
 
@@ -3309,6 +3293,10 @@ hr.clear {
   .section-fullwidth.inverted {
     background: black;
     color: white; }
+  .section-fullwidth.text-white {
+    color: white; }
+    .section-fullwidth.text-white a {
+      color: white; }
 
 .row.narrow {
   max-width: 800px; }
@@ -3739,6 +3727,23 @@ hr.clear {
   border-bottom: 1px solid #444; }
 
 /**
+ * All standard sections come here.
+ *
+ * Important: try not to edit too much here. You can extend by simply overwriting
+ * rules in your components folder.
+ */
+.section-fullwidth.demo-gradient {
+  background: #a90329;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #a90329 0%, #8f0222 44%, #6d0019 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 );
+  /* IE6-9 */ }
+
+/**
  * Most often used elements, pretty much in every single template more than once
  */
 .section-heading {
@@ -3756,7 +3761,8 @@ hr.clear {
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  padding: 0; }
   .section-halfsplit.image-right {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
@@ -3781,7 +3787,8 @@ hr.clear {
  *
  */
 .section-hero {
-  position: relative; }
+  position: relative;
+  padding: 0; }
   .section-hero:after {
     content: '';
     display: block;

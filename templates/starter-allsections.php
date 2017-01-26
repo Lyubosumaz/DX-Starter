@@ -18,11 +18,6 @@ get_header(); ?>
 <div class="section-fullwidth inverted">
 	<div class="row">
 		<div class="columns">
-			<?php get_template_part( 'snippets/section', 'heading' ); ?>
-		</div><!-- .columns -->
-	</div><!-- .row -->
-	<div class="row">
-		<div class="columns">
 			<?php get_template_part( 'snippets/flex', 'grid' ); ?>
 		</div><!-- .columns -->
 	</div><!-- .row -->
@@ -41,14 +36,12 @@ get_header(); ?>
 <div class="section-fullwidth border-top border-bottom">
 	<div class="row">
 		<div class="columns">
-			<?php get_template_part( 'snippets/section', 'heading' ); ?>
-		</div><!-- .columns -->
-	</div><!-- .row -->
-	<div class="row">
-		<div class="columns">
 			<?php get_template_part( 'snippets/flex', 'grid' ); ?>
 		</div><!-- .columns -->
 	</div><!-- .row -->
 </div><!-- .section-fullwidth -->
+
+<!-- Basic fullwidth view. Open the file and grab what you need from there -->
+<?php get_template_part( 'snippets/section', 'fullwidth-basic' ); ?>
 
 <?php get_footer(); ?>
