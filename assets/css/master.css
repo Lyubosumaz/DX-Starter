@@ -3743,6 +3743,9 @@ hr.clear {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 );
   /* IE6-9 */ }
 
+.section-fullwidth.section-faq-list {
+  background: #1a1a1a; }
+
 /**
  * Most often used elements, pretty much in every single template more than once
  */
@@ -3811,3 +3814,87 @@ hr.clear {
     text-align: center;
     max-width: 600px;
     width: 100%; }
+
+.faq-elements {
+  counter-reset: ol-counter; }
+  .faq-elements .row:last-child .columns:last-of-type .faq-element {
+    margin-bottom: 0; }
+
+.faq-element {
+  position: relative;
+  margin-bottom: 40px;
+  position: relative;
+  margin-bottom: 1em;
+  margin-bottom: 40px; }
+  .faq-element:before {
+    content: counter(ol-counter);
+    counter-increment: ol-counter;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -0.7em;
+    font-weight: bold;
+    font-size: 2.4em;
+    color: #4072db; }
+  .faq-element .title {
+    font-family: Georgia;
+    font-size: 22px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    padding-left: 50px; }
+  .faq-element .content {
+    opacity: 0.5; }
+  @media (min-width: 640px) {
+    .faq-element {
+      margin-bottom: 80px; }
+      .faq-element .title {
+        margin-bottom: 30px; } }
+
+/**
+ * .tooltip is only the wrapper, that has position: absolute. Nothing else :) The actual
+ * tooltip is in .tooltip-content element nested inside
+ */
+.tooltip {
+  position: relative;
+  cursor: help; }
+  .tooltip:hover {
+    -webkit-transition: 0.4s;
+    transition: 0.4s; }
+    .tooltip:hover .tooltip-content {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+      pointer-events: normal; }
+  .tooltip-content {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    bottom: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.8);
+    display: block;
+    max-width: 200px;
+    line-height: 1.3em;
+    padding: 8px 15px;
+    color: #FFF;
+    border-radius: 5px;
+    margin: 0 auto; }
+  .tooltip-content:after {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: transparent;
+    border-top-color: rgba(0, 0, 0, 0.8);
+    border-width: 10px;
+    margin-left: -10px; }

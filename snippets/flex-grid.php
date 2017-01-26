@@ -21,20 +21,20 @@
 	</header><!-- .flex-grid-wrapper -->
 
 	<?php // uses .col-4 .col-3 .col-2. Has responsive styles ?>
-	<div class="flex-grid col-2">
-		<div class="grid-item">
+	<div class="row">
+		<div class="column">
 			<div class="your-box-element-here">
 				<h3><i class="fa fa-star"></i> Example grid element heading</h3>
 				<p>Even worse than being over-busy is being distracted by things with little or no value — like mindlessly surfing the web when your child wants to play.</p>
 			</div><!-- .your-box-class-here -->
-		</div><!-- .grid-item -->
+		</div><!-- .column -->
 
-		<div class="grid-item">
+		<div class="column">
 			<div class="your-box-element-here">
 				<h3><i class="fa fa-star"></i> Example grid element heading</h3>
 				<p>Even worse than being over-busy is being distracted by things with little or no value — like mindlessly surfing the web when your child wants to play.</p>
 			</div><!-- .your-box-class-here -->
-		</div><!-- .grid-item -->
+		</div><!-- .column -->
 	</div><!-- .flex-grid -->
 </div><!-- .flex-grid-wrapper -->
 
