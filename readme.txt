@@ -41,5 +41,4 @@ DevriX Starter is distributed under the terms of the GNU GPL
 * Fork of https://github.com/devrix/dx-starter/, (C) 2010-2016 DevriX, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 * Foundation http://foundation.zurb.com/, (C) 1998‐2016 ZURB, Inc, [MIT](http://opensource.org/licenses/MIT)
-* Font Awesome licensed under [SIL OFL 1.1](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
-* Font Awesome Code licensed under [MIT](http://opensource.org/licenses/MIT)
+
