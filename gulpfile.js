@@ -1,22 +1,22 @@
-var gulp = require('gulp'),
-    autoprefixer = require('gulp-autoprefixer'),
-	livereload = require('gulp-livereload'),
-    sass = require('gulp-sass'),
-	notify = require('gulp-notify'),
-	uglify = require('gulp-uglify'),
-	concat = require('gulp-concat'),
-	cssmin = require('gulp-cssmin'),
-    rename = require('gulp-rename'),
-	imagemin = require('gulp-imagemin'),
-	del = require('del'),
-	moment = require('moment');
+var gulp    		 = require('gulp'),
+		autoprefixer = require('gulp-autoprefixer'),
+		livereload   = require('gulp-livereload'),
+		sass         = require('gulp-sass'),
+		notify       = require('gulp-notify'),
+		uglify       = require('gulp-uglify'),
+		concat       = require('gulp-concat'),
+		cssmin       = require('gulp-cssmin'),
+		rename       = require('gulp-rename'),
+		imagemin     = require('gulp-imagemin'),
+		del          = require('del'),
+		moment       = require('moment');
 
 gulp.task('sass', function(){
 	return gulp.src('assets/sass/**/*.scss')
-	    .pipe(sass())
+	  .pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer())
-    	.pipe(gulp.dest('assets/css/'))
-    	.pipe(livereload({ start: true }))
+    .pipe(gulp.dest('assets/css/'))
+    .pipe(livereload({ start: true }))
 		.pipe(notify({
 			onLast: true,
 			title: "Sass compiled successfully.",
