@@ -9,8 +9,8 @@ $menu-link-background: #fff;
 $menu-link-color-hover: #1a1a1a;
 $menu-link-background-hover: #f0f0f0;
 $menu-link-border-radius: rem-calc(3px);
-$submenu-padding: rem-calc(20px);
-$submenu-menu-padding: rem-calc(5px) $submenu-padding;
+$submenu-padding: 0;
+$submenu-menu-padding: rem-calc(15px) rem-calc(20px);
 $submenu-width: 250px;
 $submenu-font-size: 14px;
 
@@ -86,7 +86,7 @@ $submenu-font-size: 14px;
 			}
 
 			a:hover {
-				background: none;
+				background: #fafafa;
 			}
 		}
 	}

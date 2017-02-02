@@ -3646,10 +3646,10 @@ hr.clear {
 @media (min-width: 640px) {
   .menu-item:nth-last-child(-n+3) .sub-menu .sub-menu {
     right: calc(100%);
-    top: -0.625rem; }
+    top: 0; }
   .sub-menu {
     box-shadow: 0 7px 13px -9px rgba(0, 0, 0, 0.1);
-    padding: 1.25rem 0;
+    padding: 0 0;
     font-size: 14px;
     min-width: 250px; }
     .sub-menu .menu-item {
@@ -3659,10 +3659,10 @@ hr.clear {
       .sub-menu .menu-item:last-of-type {
         margin-bottom: 0; }
       .sub-menu .menu-item a {
-        padding: 0.3125rem 1.25rem;
+        padding: 0.9375rem 1.25rem;
         display: block; }
       .sub-menu .menu-item a:hover {
-        background: none; } }
+        background: #fafafa; } }
 
 /**
  * Various flex grid stylings that can be used across the theme.
