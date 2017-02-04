@@ -16,7 +16,6 @@
  * 		.separators - adds padding and lines between the boxes
  */
 ?>
-
 <div class="flex-grid-wrapper separators">
 
 	<?php // uses .col-4 .col-3 .col-2. Has responsive styles ?>
