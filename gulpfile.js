@@ -55,6 +55,7 @@ gulp.task('watch', ['sass', 'scripts'], function() {
 gulp.task('minifyScripts', function () {
 
 	// Add separate folders if required.
+	// You can add the assets/scripts/foundation/*.js files in here or from functions.php
 	gulp.src([
 			'assets/scripts/vendor/*.js',
 			'assets/scripts/inc/*.js',
