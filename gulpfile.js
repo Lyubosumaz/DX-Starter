@@ -55,7 +55,6 @@ gulp.task('watch', ['sass', 'scripts'], function() {
 gulp.task('minifyScripts', function () {
 
 	// Add separate folders if required.
-	// You can add the assets/scripts/foundation/*.js files in here or from functions.php
 	gulp.src([
 			'assets/scripts/vendor/*.js',
 			'assets/scripts/inc/*.js',
@@ -65,6 +64,18 @@ gulp.task('minifyScripts', function () {
 		.pipe(gulp.dest('assets/scripts/'))
 		.pipe(rename('bundle.min.js'))
 		.pipe(uglify())
+		.pipe(gulp.dest('assets/scripts/'));
+});
+
+gulp.task('minifyScriptsFoundation', function () {
+	gulp.src([
+			'assets/scripts/foundation/foundation.core.js',
+			'assets/scripts/foundation/foundation.util.*.js',
+
+			// here are the scripts you need:
+			'assets/scripts/foundation/foundation.tooltip.js',
+		])
+		.pipe(concat('foundation.min.js'))
 		.pipe(gulp.dest('assets/scripts/'));
 });
 

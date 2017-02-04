@@ -142,4 +142,8 @@ jQuery( document ).ready( function ( $ ) {
 		console.log = function() {};
 	}
 
+	// Initialize foundation's JS
+	$('.has-tip').foundation();
+	console.log($(document).asd());
+
 });
