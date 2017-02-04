@@ -67,18 +67,6 @@ gulp.task('minifyScripts', function () {
 		.pipe(gulp.dest('assets/scripts/'));
 });
 
-gulp.task('minifyScriptsFoundation', function () {
-	gulp.src([
-			'assets/scripts/foundation/foundation.core.js',
-			'assets/scripts/foundation/foundation.util.*.js',
-
-			// here are the scripts you need:
-			'assets/scripts/foundation/foundation.tooltip.js',
-		])
-		.pipe(concat('foundation.min.js'))
-		.pipe(gulp.dest('assets/scripts/'));
-});
-
 // This will take care of rights permission errors
 gulp.task('cleanup', function() {
 	// Do not delete assets/scripts/scripts.js, that's the working file :)
