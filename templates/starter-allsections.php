@@ -18,11 +18,6 @@ get_header(); ?>
 <div class="section-fullwidth inverted">
 	<div class="row">
 		<div class="columns">
-			<p>
-			...clearing away the brambles with the
-			<span data-tooltip aria-haspopup="true" class="has-tip top" data-disable-hover="false" tabindex="2" title="You see?  I'm open!">tooltip will stay open</span>
-			At the spot thus attained a second peg was driven, and about this, as a centre, a rude circle, about four feet in diameter, described. Taking now a spade himself, and giving one to Jupiter and one to me, Legrand begged us to set about one to digging as quickly as possible.
-			</p>
 			<?php get_template_part( 'snippets/flex', 'grid' ); ?>
 		</div><!-- .columns -->
 	</div><!-- .row -->
