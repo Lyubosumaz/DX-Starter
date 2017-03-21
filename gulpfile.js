@@ -13,10 +13,10 @@ var gulp    		 = require('gulp'),
 
 gulp.task('sass', function(){
 	return gulp.src('assets/sass/**/*.scss')
-	  .pipe(sass().on('error', sass.logError))
+	  	.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer())
-    .pipe(gulp.dest('assets/css/'))
-    .pipe(livereload({ start: true }))
+    	.pipe(gulp.dest('assets/css/'))
+    	.pipe(livereload({ start: true }))
 		.pipe(notify({
 			onLast: true,
 			title: "Sass compiled successfully.",
