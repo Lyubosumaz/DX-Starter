@@ -36,7 +36,9 @@ Run `$ npm install`. This will create `node_modules` folder. Don't worry, it is 
 
 ### Compile Sass without npm
 
-If you have `sass` command installed, you can run `sass --watch assets/sass/master.scss:assets/css/master.min.css --style compressed` to compile only the sass file. For JavaScript you will have to use gulp.
+If you have `sass` command installed, you can run `sass --watch assets/sass/master.scss:assets/css/master.min.css --style compressed` to compile only the sass file. For JavaScript you will have to use gulp. 
+
+**Important**: using this command, you will NOT generate the same output as from Gulp. Inside the Gulp scripts we have autoprefixing among other packages that do more work than simply translating Sass into CSS. Expect browser support to suffer if you use only the sass command.
 
 ## Note:
 
