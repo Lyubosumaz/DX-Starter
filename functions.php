@@ -167,6 +167,10 @@ function dxstarter_scripts() {
 	// Enqueue the only styling file here that is build with Gulp
 	wp_enqueue_style( 'stylesheet', get_template_directory_uri() . '/assets/css/master' . $suffix . '.css' );
 	
+	if ( true === WP_DEBUG ) {
+		wp_enqueue_style( 'temp', get_template_directory_uri() . '/assets/css/bozo-devs' . $suffix . '.css' );
+	}
+	
 	// And the only JS file that is build with Gulp
 	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/scripts/bundle' . $suffix . '.js', array( "jquery" ), '20170204', true );
 
