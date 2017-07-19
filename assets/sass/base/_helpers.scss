@@ -2,18 +2,18 @@
 // 
 // Place ul element in the middle of its parent. The structure
 // .center-ul > ul must be followed in order to work. (uds)
-.center-ul{
+.center-ul {
 	text-align: center;
 
 	& > ul { display: inline-block; }
 }
 
 // WordPress required styling
-.float-right{
+.float-right {
 	float: right;
 }
 
-.float-left{
+.float-left {
 	float: left;
 }
 

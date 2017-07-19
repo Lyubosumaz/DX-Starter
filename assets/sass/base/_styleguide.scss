@@ -35,7 +35,9 @@
 		max-width: calc(10% - 20px);
 		width: 100%;
 
-		@media (max-width: 640px) { max-width: calc(50% - 20px) }
+		@media (max-width: 640px) { 
+			max-width: calc(50% - 20px); 
+		}
 		
 		// By default make them faded out.
 		& > * { opacity: 0.2; }
