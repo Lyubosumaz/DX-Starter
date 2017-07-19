@@ -342,7 +342,6 @@ ul {
   clip: auto !important;
   color: #21759b;
   display: block;
-  font-size: 14px;
   font-size: 0.875rem;
   font-weight: bold;
   height: auto;
@@ -4550,7 +4549,6 @@ hr.clear {
 .owl-carousel .owl-controls .owl-nav .owl-prev,
 .owl-carousel .owl-controls .owl-nav .owl-next,
 .owl-carousel .owl-controls .owl-dot {
-  cursor: pointer;
   cursor: hand;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -4594,10 +4592,7 @@ hr.clear {
   user-select: auto; }
 
 .owl-carousel .owl-grab {
-  cursor: move;
   cursor: -webkit-grab;
-  cursor: -o-grab;
-  cursor: -ms-grab;
   cursor: grab; }
 
 .owl-carousel.owl-rtl {
@@ -4970,7 +4965,6 @@ hr {
   .menu-item-has-children .dropdown-arrow {
     height: 2.625rem;
     width: 2.625rem;
-    padding: 0;
     font-family: FontAwesome;
     display: inline-block;
     position: absolute;
@@ -5122,11 +5116,7 @@ hr {
  * rules in your components folder.
  */
 .section-fullwidth.demo-gradient {
-  background: #a90329;
-  /* Old browsers */
-  /* FF3.6-15 */
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #a90329 0%, #8f0222 44%, #6d0019 100%);
+  background: #a90329 linear-gradient(to bottom, #a90329 0%, #8f0222 44%, #6d0019 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 );
   /* IE6-9 */ }
@@ -5209,9 +5199,6 @@ hr {
 
 .faq-element {
   position: relative;
-  margin-bottom: 40px;
-  position: relative;
-  margin-bottom: 1em;
   margin-bottom: 40px; }
   .faq-element:before {
     content: counter(ol-counter);

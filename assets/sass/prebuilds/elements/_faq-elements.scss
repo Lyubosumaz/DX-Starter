@@ -12,10 +12,6 @@
 .faq-element {
 	position: relative;
 	margin-bottom: 40px;
-	position: relative;
-	margin-bottom: 1em;
-	margin-bottom: 40px;
-
 
 	&:before {
 		content: counter(ol-counter);
