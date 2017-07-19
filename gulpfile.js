@@ -31,7 +31,7 @@ gulp.task('sass', function(){
 		.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer())
 		.pipe(gulp.dest('assets/css/'))
-		.pipe(livereload({ start: true }))
+		// .pipe(livereload({ start: true }))
 		.pipe(notify({
 			onLast: true,
 			title: "Sass compiled successfully.",
