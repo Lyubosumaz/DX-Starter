@@ -1,4 +1,6 @@
-var gulp    		 = require('gulp'),
+'use strict';
+
+var 	gulp    	 = require('gulp'),
 		autoprefixer = require('gulp-autoprefixer'),
 		livereload   = require('gulp-livereload'),
 		sass         = require('gulp-sass'),
@@ -9,14 +11,26 @@ var gulp    		 = require('gulp'),
 		rename       = require('gulp-rename'),
 		imagemin     = require('gulp-imagemin'),
 		del          = require('del'),
-		moment       = require('moment');
+		moment       = require('moment'),
+		sassLint 	 = require('gulp-sass-lint');
 
 gulp.task('sass', function(){
 	return gulp.src('assets/sass/**/*.scss')
-	  	.pipe(sass().on('error', sass.logError))
+		.pipe(sassLint({
+			files: {
+				ignore: [
+					'assets/sass/modularscale/**/*.scss',
+					'assets/sass/foundation/**/*.scss',
+					'assets/sass/font-awesome/**/*.scss'
+				]
+			}
+		}))
+		.pipe(sassLint.format())
+		.pipe(sassLint.failOnError())
+		.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer())
-    	.pipe(gulp.dest('assets/css/'))
-    	.pipe(livereload({ start: true }))
+		.pipe(gulp.dest('assets/css/'))
+		.pipe(livereload({ start: true }))
 		.pipe(notify({
 			onLast: true,
 			title: "Sass compiled successfully.",
@@ -56,10 +70,10 @@ gulp.task('minifyScripts', function () {
 
 	// Add separate folders if required.
 	gulp.src([
-			'assets/scripts/vendor/*.js',
-			'assets/scripts/inc/*.js',
-			'assets/scripts/scripts.js',
-		])
+		'assets/scripts/vendor/*.js',
+		'assets/scripts/inc/*.js',
+		'assets/scripts/scripts.js',
+	])
 		.pipe(concat('bundle.js'))
 		.pipe(gulp.dest('assets/scripts/'))
 		.pipe(rename('bundle.min.js'))

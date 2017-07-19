@@ -1,8 +1,6 @@
-/**
- * Our Work Process component - two columns of content, different than the
- * Foundation columns grid system. Can't use columns class prefix because of
- * the Foundation's selectors.
- */
+// Our Work Process component - two columns of content, different than the
+// Foundation columns grid system. Can't use columns class prefix because of
+// the Foundation's selectors.
 .rates-columns {
 
 	// For finer tuning
@@ -15,7 +13,7 @@
 	.rates-right {
 		text-align: center;
 		margin-bottom: 50px;
-	    width: 50%;
+		width: 50%;
 		padding: 0 20px;
 	}
 

@@ -154,7 +154,7 @@ ol, ul {
 }
 
 // Do not show the outline on the skip link target.
-#content[tabindex="-1"]:focus {
+#content[tabindex="-1"]:focus { // sass-lint:disable-line no-ids
 	outline: 0;
 }
 

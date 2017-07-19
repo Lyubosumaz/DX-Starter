@@ -192,7 +192,7 @@ body.is-menu-opened {
 	}
 
 	.menu-item:nth-last-child(-n+3) .sub-menu {
-	    right: 0;
+		right: 0;
 		left: auto;
 
 		.sub-menu {
@@ -270,8 +270,8 @@ body.is-menu-opened {
 		cursor: pointer;
 
 		padding: 4px;
-	    line-height: $menu-dropdown-arrow-line-height;
-	    font-size: $menu-dropdown-arrow-size;
+		line-height: $menu-dropdown-arrow-line-height;
+		font-size: $menu-dropdown-arrow-size;
 
 		// Disable select while clicking
 		&, & i {
