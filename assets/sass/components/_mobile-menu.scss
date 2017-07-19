@@ -274,7 +274,8 @@ body.is-menu-opened {
 		font-size: $menu-dropdown-arrow-size;
 
 		// Disable select while clicking
-		&, & i {
+		&, 
+		& i {
 			user-select: none;
 		}
 	}

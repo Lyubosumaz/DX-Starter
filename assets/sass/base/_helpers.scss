@@ -2,6 +2,7 @@
 // .center-ul > ul must be followed in order to work. (uds)
 .center-ul{
 	text-align: center;
+
 	& > ul { display: inline-block; }
 }
 
@@ -23,22 +24,54 @@
 	display: none;
 }
 
-.cb { clear: both }
-hr.clear { border: none; background: transparent; clear: both; }
+.cb {
+	clear: both;
+}
+
+hr.clear {
+	border: none; background: transparent; clear: both;
+}
 
 // Text Modifiers
-.text-right 	{ text-align: right; }
-.text-left 		{ text-align: left; }
-.text-center 	{ text-align: center; }
-.text-uppercase { text-transform: uppercase; }
-.text-italic 	{ font-style: italic; }
+.text-right {
+	text-align: right;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-uppercase {
+	text-transform: uppercase;
+}
+
+.text-italic {
+	font-style: italic;
+}
 
 .text-white {
 	color: white;
 
-	h1,h2,h3,h4,h5,h6 { color: white; }
-	a { color: white; }
-	a:hover { color: white; }
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 { 
+		color: white;
+	}
+
+	a {
+		color: white;
+	}
+
+	a:hover {
+		color: white;
+	}
 }
 
 .truncate {

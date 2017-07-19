@@ -64,13 +64,13 @@ $submenu-font-size: 14px;
 		right: calc(100%);
 		top: -($submenu-padding / 2);
 	}
+
 	.sub-menu {
-		// border: none;
 		box-shadow: 0 7px 13px -9px rgba(black, 0.1);
 		padding: $submenu-padding 0;
 		font-size: $submenu-font-size;
 		min-width: $submenu-width;
-		
+
 		.menu-item {
 			margin: 0;
 			padding: 0;
@@ -90,5 +90,4 @@ $submenu-font-size: 14px;
 			}
 		}
 	}
-
 }

@@ -70,9 +70,9 @@
 	// Create the list of variables depending on the settings above.
 	@each $color-name, $color-variable in $colors {
 		.#{$color-name} > * { opacity: 1; }
+
 		.#{$color-name} .color {
 			background-color: $color-variable;
 		}
-
 	}
 }

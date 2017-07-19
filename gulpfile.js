@@ -19,6 +19,7 @@ gulp.task('sass', function(){
 		.pipe(sassLint({
 			files: {
 				ignore: [
+					'assets/sass/base/_normalize.scss',
 					'assets/sass/modularscale/**/*.scss',
 					'assets/sass/foundation/**/*.scss',
 					'assets/sass/font-awesome/**/*.scss'

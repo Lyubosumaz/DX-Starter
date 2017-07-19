@@ -5,12 +5,15 @@
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
 }
+
 .owl-carousel .owl-animated-in {
 	z-index: 0;
 }
+
 .owl-carousel .owl-animated-out {
 	z-index: 1;
 }
+
 .owl-carousel .fadeOut {
 	-webkit-animation-name: fadeOut;
 	animation-name: fadeOut;
@@ -162,6 +165,7 @@
 	-o-transition: opacity 400ms ease;
 	transition: opacity 400ms ease;
 }
+
 .owl-carousel .owl-item img {
 	transform-style: preserve-3d;
 }
