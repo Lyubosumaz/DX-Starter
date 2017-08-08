@@ -47,5 +47,6 @@ get_header(); ?>
 <?php get_template_part( 'snippets/section', 'list-mirror' ); ?>
 <?php get_template_part( 'snippets/section', 'features-grid' ); ?>
 <?php get_template_part( 'snippets/section', 'call-to-action' ); ?>
+<?php get_template_part( 'snippets/section', 'welcome' ); ?>
 
 <?php get_footer(); ?>
