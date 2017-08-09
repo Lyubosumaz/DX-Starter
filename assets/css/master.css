@@ -5159,9 +5159,6 @@ hr {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 );
   /* IE6-9 */ }
 
-.section-fullwidth.section-faq-list {
-  background: #1a1a1a; }
-
 /**
  * Most often used elements, pretty much in every single template more than once
  */
@@ -5258,12 +5255,21 @@ hr {
   .faq-elements .row:last-child .columns:last-of-type .faq-element {
     margin-bottom: 0; }
 
+.faq-list {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+
 .faq-element {
+  -webkit-flex: 1 1 50%;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
   position: relative;
-  margin-bottom: 40px;
-  position: relative;
-  margin-bottom: 1em;
-  margin-bottom: 40px; }
+  margin-bottom: 30px;
+  padding: 10px; }
   .faq-element:before {
     content: counter(ol-counter);
     counter-increment: ol-counter;
@@ -5275,18 +5281,17 @@ hr {
     font-size: 2.4em;
     color: #4072db; }
   .faq-element .title {
-    font-family: Georgia;
     font-size: 22px;
     margin-bottom: 10px;
     margin-top: 0;
     padding-left: 50px; }
   .faq-element .content {
     opacity: 0.5; }
-  @media (min-width: 640px) {
+  @media (max-width: 640px) {
     .faq-element {
-      margin-bottom: 80px; }
-      .faq-element .title {
-        margin-bottom: 30px; } }
+      -webkit-flex: 1 1 100%;
+          -ms-flex: 1 1 100%;
+              flex: 1 1 100%; } }
 
 /**
  * .tooltip is only the wrapper, that has position: absolute. Nothing else :) The actual
