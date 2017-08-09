@@ -44,7 +44,6 @@ get_header(); ?>
 <!-- Basic fullwidth view. Open the file and grab what you need from there -->
 <?php get_template_part( 'snippets/section', 'fullwidth-basic' ); ?>
 <?php get_template_part( 'snippets/section', 'faq-large' ); ?>
-<?php get_template_part( 'snippets/section', 'list-mirror' ); ?>
 <?php get_template_part( 'snippets/section', 'features-grid' ); ?>
 <?php get_template_part( 'snippets/section', 'call-to-action' ); ?>
 <?php get_template_part( 'snippets/section', 'welcome' ); ?>
