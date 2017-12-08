@@ -46,7 +46,7 @@
 
 					<nav id="site-navigation" class="main-navigation">
 						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-							<i class="fa fa-reorder"></i>
+							<i class="far fa-bars"></i>
 						</button>
 						<div class="menu-primary-container">
 							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
