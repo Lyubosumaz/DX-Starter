@@ -7,6 +7,16 @@
  * @package DevriX_Starter
  */
 
+/**
+ * Set a define variable for the assets version. This is going to be used, so we can prevent issues
+ * with the caching.
+ * 
+ * An example format would be: 20180126, which means January, 26th 2018.
+ * Use the hour, only if we have a few styling updates on the same day, e.g. 20180126-11:05
+ */
+if ( ! defined( 'DX_ASSETS_VERSION' ) ) {
+    define( 'DX_ASSETS_VERSION', '20180126' );
+}
 
 /**
  * Implement the Custom Header feature.
@@ -30,7 +40,7 @@ require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
- */
+ */0
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
@@ -165,14 +175,15 @@ function dxstarter_scripts() {
 	}
 
 	// Enqueue the only styling file here that is build with Gulp
-	wp_enqueue_style( 'stylesheet', get_template_directory_uri() . '/assets/css/master' . $suffix . '.css' );
+	wp_enqueue_style( 'stylesheet', get_template_directory_uri() . '/assets/css/master' . $suffix . '.css', array(), DX_ASSETS_VERSION );
 	
+	// Sometimes you need to add a few quick changes without using Gulp/Sass, right? :)
 	if ( true === WP_DEBUG ) {
-		wp_enqueue_style( 'temp', get_template_directory_uri() . '/assets/css/bozo-devs' . $suffix . '.css' );
+	    wp_enqueue_style( 'temp', get_template_directory_uri() . '/assets/css/bozo-devs' . $suffix . '.css', array(), DX_ASSETS_VERSION );
 	}
 	
 	// And the only JS file that is build with Gulp
-	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/scripts/bundle' . $suffix . '.js', array( "jquery" ), '20170204', true );
+	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/scripts/bundle' . $suffix . '.js', array( "jquery" ), DX_ASSETS_VERSION, true );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
