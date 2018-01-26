@@ -40,7 +40,7 @@ require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
- */0
+ */
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
