@@ -9,12 +9,17 @@ fs.readFile(someFile, 'utf8', function (err,data) {
     return console.log(err);
   }
 
+  // Find the line where the version is at.
   let re = /define\( 'DX_ASSETS_VERSION', '*(.*?)' \);/g;
   let found = data.match(re);
-  let currentVersion = found[0].substring(30, found[0].length - 4);
-  let time = moment().format("Do-MMM-YYYY");
 
-  let themeVersionNumber = parseInt(currentVersion) + 1 + '-' + time;
+  // This will get and increment the version
+  currentVersion = parseInt(found[0].substring(39, found[0].length - 4));
+  currentVersion++;
+
+  let time = moment().format("YYYYMMDD");
+
+  let themeVersionNumber = time + '-' + currentVersion;
   let themeVersionString = "define( 'DX_ASSETS_VERSION', '" + themeVersionNumber + "' );";
 
   let result = data.replace(/define\( 'DX_ASSETS_VERSION', '*(.*?)' \);/g, themeVersionString);

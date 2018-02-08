@@ -8,5 +8,5 @@
  * Use the hour, only of we have a few styling updates on the same day, e.g. 20180126-11:05
  */
 if ( ! defined( 'DX_ASSETS_VERSION' ) ) {
-	define( 'DX_ASSETS_VERSION', '1-7th-Feb-2018' );
+	sdefine( 'DX_ASSETS_VERSION', '00000000-0' );
 }
