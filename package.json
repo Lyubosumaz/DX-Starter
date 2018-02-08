@@ -19,12 +19,14 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.0.0",
     "gulp-uglify": "^2.0.0",
-    "moment": "^2.13.0"
+    "moment": "^2.13.0",
+    "replace-in-file": "^3.1.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gulp": "./node_modules/.bin/gulp",
-    "ziptheme": "bash zip.sh"
+    "ziptheme": "bash zip.sh",
+    "ver": "node index.js"
   },
   "author": "DevriX",
   "license": "ISC",
