@@ -22,7 +22,9 @@ fs.readFile(someFile, 'utf8', function (err,data) {
   let found = data.match(versionRegex);
 
   // This will get and increment the version of the assets file.
-  currentVersion = parseInt(found[0].substring(39, found[0].length - 4));
+  // 39 must be replaced with automated find
+  let verIndexOf = found[0].indexOf(', \'') + 3 + 9; // 3 for the ", '" bit and 9 for the date + dash
+  currentVersion = parseInt(found[0].substring(verIndexOf, found[0].length - 4));
   currentVersion++;
 
   // Create the date format. Of course you can change that to anything you like
