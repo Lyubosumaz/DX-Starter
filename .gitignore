@@ -78,7 +78,7 @@ Icon            # Icon must end with two \r
 nbproject/private/
 build/
 nbbuild/
-dist/
+/dist/
 nbdist/
 .nb-gradle/
 

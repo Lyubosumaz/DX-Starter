@@ -13,6 +13,7 @@ let gulp = require("gulp"),
 	del = require("del"),
 	moment = require("moment"),
 	sassLint = require("gulp-sass-lint"),
+	newer = require("gulp-newer"),
 	babel = require("gulp-babel");
 
 /**
@@ -103,6 +104,7 @@ gulp.task("optimizeImages", function() {
 	// Add separate folders if required.
 	gulp
 		.src(paths.source.images + "*")
+		.pipe(newer(paths.destination.images))
 		.pipe(imagemin())
 		.pipe(gulp.dest(paths.destination.images));
 });
