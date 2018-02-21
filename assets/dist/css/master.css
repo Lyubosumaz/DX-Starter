@@ -5309,7 +5309,7 @@ readers do not read off random characters that represent icons */
   100% {
     opacity: 0; } }
 
-/* 
+/*
  * 	Owl Carousel - Auto Height Plugin
  */
 .owl-height {
@@ -5489,7 +5489,7 @@ readers do not read off random characters that represent icons */
  * DX MOBILE MENU
  * ============================================================================
  * Basic styling and settings for the mobile menu. Edit to match each theme's
- * design. 
+ * design.
  *
  * @version 1.1
  */
@@ -5958,3 +5958,5 @@ readers do not read off random characters that represent icons */
     border-top-color: rgba(0, 0, 0, 0.8);
     border-width: 10px;
     margin-left: -10px; }
+
+/*# sourceMappingURL=master.min.css.map */
