@@ -77,6 +77,9 @@ gulp.task("watch", ["sass"], function() {
 
 	gulp.watch(paths.source.sass + "**/*.scss", ["sass"]);
 	gulp.watch(paths.source.scripts + "**/*.js", ["minifyScripts"]);
+	gulp.watch(paths.source.images + "*", ["optimizeImages"]);
+
+	// Once the CSS file is build, minify it.
 	gulp.watch(paths.destination.css + "master.css", ["cssmin"]);
 });
 
@@ -100,11 +103,9 @@ gulp.task("minifyScripts", function() {
 gulp.task("optimizeImages", function() {
 	// Add separate folders if required.
 	gulp
-		.src(paths.source.images + '*')
-		.pipe(babel())
-		.pipe(concat("bundle.min.js"))
-		.pipe(uglify())
-		.pipe(gulp.dest(paths.destination.scripts));
+		.src(paths.source.images + "*")
+		.pipe(imagemin())
+		.pipe(gulp.dest(paths.destination.images));
 });
 
 // This will take care of rights permission errors
