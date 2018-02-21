@@ -139,6 +139,5 @@ gulp.task("default", [
 
 // Print the current date formatted. Used for the script compile notify messages.
 function getFormatDate() {
-	var currentTime = moment().format("LTS");
-	return currentTime;
+	return moment().format("LTS");
 }
