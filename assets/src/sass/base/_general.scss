@@ -28,15 +28,6 @@ body {
 	background: white;
 }
 
-/**
- * Since this is dashboard layout we need 100% width on all
- * elements, so there is no empty space left.
- */
-.row {
-	// max-width: 100%;
-	// width: 100%;
-}
-
 p:first-child {
 	margin-top: 0;
 }
@@ -61,12 +52,6 @@ h5 {
 	// Add this customly for entry content if needed.
 	margin: 0;
 }
-
-h1 {}
-h2 {}
-h3 {}
-h4 {}
-h5 {}
 
 blockquote {
 	font-style: italic;
@@ -107,13 +92,11 @@ img {
 .bypostauthor { display: block; }
 
 .alignleft {
-	display: inline;
 	float: left;
 	margin-right: 1.5em;
 }
 
 .alignright {
-	display: inline;
 	float: right;
 	margin-left: 1.5em;
 }

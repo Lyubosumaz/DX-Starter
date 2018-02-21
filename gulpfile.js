@@ -89,6 +89,7 @@ gulp.task("minifyScripts", function() {
 			paths.source.scripts + "inc/*.js",
 			paths.source.scripts + "scripts.js"
 		])
+		.pipe(babel())
 		.pipe(concat("bundle.min.js"))
 		.pipe(uglify())
 		.pipe(gulp.dest(paths.destination.scripts));

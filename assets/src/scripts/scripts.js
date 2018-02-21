@@ -10,7 +10,7 @@ jQuery( document ).ready( function ( $ ) {
 	| Id needed for development testing this variable should be used.
 	|
 	*/
-	var devMode = function() {
+	const devMode = function() {
 		return true;
 	};
 
