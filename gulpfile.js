@@ -71,10 +71,15 @@ gulp.task("sass", function() {
 gulp.task("cssmin", function() {
 	gulp
 	.src(paths.destination.css + "master.css")
+	.pipe(sourcemaps.init())
 	.pipe(cssmin())
 	.pipe(rename({ suffix: ".min" }))
 	.pipe(gulp.dest(paths.destination.css))
-	.pipe(notify({ message: "Successfully minified master.min.css" }));
+	.pipe(notify({ message: "Successfully minified master.min.css" }))
+	.pipe(sourcemaps.write("./"))
+	.pipe(gulp.dest(paths.destination.css))
+	.pipe(rename({ suffix: ".min" }))
+	.pipe(notify({ message: "Sucessfully mapped master.min.css"}));
 });
 
 // The files to be watched for minifying. If more dev js files are added this
