@@ -85,9 +85,6 @@ gulp.task("watch", ["sass"], function() {
 	gulp.watch(paths.destination.css + "master.css", ["cssmin"]);
 });
 
-// First combine, then minify all the listed scripts in two files.
-// bundle.js - non-minified version for easy look on the size (development)
-// bundle.min.js - minified version (production)
 gulp.task("minifyScripts", function() {
 	// Add separate folders if required.
 	gulp
@@ -116,14 +113,9 @@ gulp.task("optimizeFonts", function() {
 		.pipe(gulp.dest(paths.destination.fonts));
 });
 
-// This will take care of rights permission errors
+// This will take care of rights permission errors if any
 gulp.task("cleanup", function() {
-	// Do not delete assets/scripts/scripts.js, that's the working file :)
-	del([
-		paths.destination.scripts + "bundle.min.js",
-	]);
-
-	// Delete all css files and regenerate them again
+	del(paths.destination.scripts + "bundle.min.js");
 	del(paths.destination.css + "*.css");
 });
 
