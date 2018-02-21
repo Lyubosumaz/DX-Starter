@@ -13,12 +13,13 @@ let gulp = require("gulp"),
 	del = require("del"),
 	moment = require("moment"),
 	sassLint = require("gulp-sass-lint"),
+	sourcemaps = require("gulp-sourcemaps"),
 	babel = require("gulp-babel");
 
 /**
- * Unify all scripts to work with source and destination paths.
- * For more custom paths, please add them in this object
- */
+* Unify all scripts to work with source and destination paths.
+* For more custom paths, please add them in this object
+*/
 const paths = {
 	source: {
 		scripts: "assets/src/scripts/",
@@ -36,40 +37,44 @@ const paths = {
 
 gulp.task("sass", function() {
 	return gulp
-		.src(paths.source.sass + "**/*.scss")
-		.pipe(
-			sassLint({
-				files: {
-					ignore: [
-						paths.source.sass + "/base/_normalize.scss",
-						paths.source.sass + "/modularscale/**/*.scss",
-						paths.source.sass + "/foundation/**/*.scss",
-						paths.source.sass + "/font-awesome/**/*.scss"
-					]
-				}
-			})
-		)
-		.pipe(sassLint.format())
-		.pipe(sassLint.failOnError())
-		.pipe(sass().on("error", sass.logError))
-		.pipe(autoprefixer())
-		.pipe(gulp.dest(paths.destination.css))
-		.pipe(
-			notify({
-				onLast: true,
-				title: "Sass compiled successfully.",
-				message: getFormatDate()
-			})
-		);
+	.src(paths.source.sass + "**/*.scss")
+	.pipe(sourcemaps.init())
+	.pipe(sassLint({
+		files: {
+			ignore: [
+				paths.source.sass + "/base/_normalize.scss",
+				paths.source.sass + "/modularscale/**/*.scss",
+				paths.source.sass + "/foundation/**/*.scss",
+				paths.source.sass + "/font-awesome/**/*.scss"
+			]
+		}
+	}))
+	.pipe(sassLint.format())
+	.pipe(sassLint.failOnError())
+	.pipe(sass().on("error", sass.logError))
+	.pipe(autoprefixer())
+	// .pipe(sourcemaps.write("./"))
+	.pipe(sourcemaps.write("./", {
+		mapFile: function(mapFilePath) {
+			// source map files are named *.map instead of *.js.map
+			return mapFilePath.replace('.css.map', '.min.css.map');
+		}
+	}))
+	.pipe(gulp.dest(paths.destination.css))
+	.pipe(notify({
+		onLast: true,
+		title: "Sass compiled successfully.",
+		message: getFormatDate()
+	}));
 });
 
 gulp.task("cssmin", function() {
 	gulp
-		.src(paths.destination.css + "master.css")
-		.pipe(cssmin())
-		.pipe(rename({ suffix: ".min" }))
-		.pipe(gulp.dest(paths.destination.css))
-		.pipe(notify({ message: "Successfully minified master.min.css" }));
+	.src(paths.destination.css + "master.css")
+	.pipe(cssmin())
+	.pipe(rename({ suffix: ".min" }))
+	.pipe(gulp.dest(paths.destination.css))
+	.pipe(notify({ message: "Successfully minified master.min.css" }));
 });
 
 // The files to be watched for minifying. If more dev js files are added this
@@ -88,29 +93,29 @@ gulp.task("watch", ["sass"], function() {
 gulp.task("minifyScripts", function() {
 	// Add separate folders if required.
 	gulp
-		.src([
-			paths.source.scripts + "vendor/*.js",
-			paths.source.scripts + "inc/*.js",
-			paths.source.scripts + "scripts.js"
-		])
-		.pipe(babel())
-		.pipe(concat("bundle.min.js"))
-		.pipe(uglify())
-		.pipe(gulp.dest(paths.destination.scripts));
+	.src([
+		paths.source.scripts + "vendor/*.js",
+		paths.source.scripts + "inc/*.js",
+		paths.source.scripts + "scripts.js"
+	])
+	.pipe(babel())
+	.pipe(concat("bundle.min.js"))
+	.pipe(uglify())
+	.pipe(gulp.dest(paths.destination.scripts));
 });
 
 gulp.task("optimizeImages", function() {
 	// Add separate folders if required.
 	gulp
-		.src(paths.source.images + "*")
-		.pipe(imagemin())
-		.pipe(gulp.dest(paths.destination.images));
+	.src(paths.source.images + "*")
+	.pipe(imagemin())
+	.pipe(gulp.dest(paths.destination.images));
 });
 
 gulp.task("optimizeFonts", function() {
 	gulp
-		.src(paths.source.fonts + "*")
-		.pipe(gulp.dest(paths.destination.fonts));
+	.src(paths.source.fonts + "*")
+	.pipe(gulp.dest(paths.destination.fonts));
 });
 
 // This will take care of rights permission errors if any
