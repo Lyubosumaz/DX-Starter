@@ -22,11 +22,13 @@ let gulp = require("gulp"),
 const paths = {
 	source: {
 		scripts: "assets/src/scripts/",
-		sass: "assets/src/sass/"
+		sass: "assets/src/sass/",
+		images: "assets/src/images/"
 	},
 	destination: {
 		scripts: "assets/dist/scripts/",
-		css: "assets/dist/css/"
+		css: "assets/dist/css/",
+		images: "assets/dist/images/"
 	}
 };
 
@@ -89,6 +91,16 @@ gulp.task("minifyScripts", function() {
 			paths.source.scripts + "inc/*.js",
 			paths.source.scripts + "scripts.js"
 		])
+		.pipe(babel())
+		.pipe(concat("bundle.min.js"))
+		.pipe(uglify())
+		.pipe(gulp.dest(paths.destination.scripts));
+});
+
+gulp.task("optimizeImages", function() {
+	// Add separate folders if required.
+	gulp
+		.src(paths.source.images + '*')
 		.pipe(babel())
 		.pipe(concat("bundle.min.js"))
 		.pipe(uglify())
