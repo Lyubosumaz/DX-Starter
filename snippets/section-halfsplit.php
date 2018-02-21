@@ -19,7 +19,7 @@
 
 <section class="section-fullwidth section-halfsplit">
 	<div class="section-image product-preview" style="background-color: #FFA5A5;">
-		<img src="http://localhost/devrix/wp-content/themes/devrix-v2/assets/images/showcase-masonry.png" alt="Theme - Masonry">
+		<img src="http://fireclip.tv/wp-content/uploads/2014/07/laptop-mockup.png" alt="Theme - Masonry">
 	</div><!-- .image -->
 	<div class="section-content">
 		<h3>Hello world</h3>
@@ -30,7 +30,7 @@
 
 <section class="section-fullwidth section-halfsplit image-right">
 	<div class="section-image product-preview" style="background-color: #FFA5A5;">
-		<img src="http://localhost/devrix/wp-content/themes/devrix-v2/assets/images/showcase-masonry.png" alt="Theme - Masonry">
+		<img src="http://fireclip.tv/wp-content/uploads/2014/07/laptop-mockup.png" alt="Theme - Masonry">
 	</div><!-- .image -->
 	<div class="section-content">
 		<h3>Hello world</h3>

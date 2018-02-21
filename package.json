@@ -18,12 +18,14 @@
     "gulp-sass-lint": "^1.3.2",
     "gulp-uglify": "^2.0.0",
     "moment": "^2.13.0",
-    "sass-lint": "^1.10.2"
+    "sass-lint": "^1.10.2",
+    "replace-in-file": "^3.1.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gulp": "./node_modules/.bin/gulp",
-    "ziptheme": "bash zip.sh"
+    "ziptheme": "bash zip.sh",
+    "ver": "node index.js"
   },
   "author": "DevriX",
   "license": "ISC",
