@@ -23,12 +23,14 @@ const paths = {
 	source: {
 		scripts: "assets/src/scripts/",
 		sass: "assets/src/sass/",
-		images: "assets/src/images/"
+		images: "assets/src/images/",
+		fonts: "assets/src/fonts/"
 	},
 	destination: {
 		scripts: "assets/dist/scripts/",
 		css: "assets/dist/css/",
-		images: "assets/dist/images/"
+		images: "assets/dist/images/",
+		fonts: "assets/dist/fonts/"
 	}
 };
 
@@ -108,6 +110,12 @@ gulp.task("optimizeImages", function() {
 		.pipe(gulp.dest(paths.destination.images));
 });
 
+gulp.task("optimizeFonts", function() {
+	gulp
+		.src(paths.source.fonts + "*")
+		.pipe(gulp.dest(paths.destination.fonts));
+});
+
 // This will take care of rights permission errors
 gulp.task("cleanup", function() {
 	// Do not delete assets/scripts/scripts.js, that's the working file :)
@@ -129,7 +137,13 @@ gulp.task("reset", function() {
 });
 
 // What will be run with simply writing "$ gulp"
-gulp.task("default", ["sass", "watch", "minifyScripts", "cssmin"]);
+gulp.task("default", [
+	"sass",
+	"watch",
+	"minifyScripts",
+	"cssmin",
+	"optimizeImages"
+]);
 
 // Print the current date formatted. Used for the script compile notify messages.
 function getFormatDate() {
