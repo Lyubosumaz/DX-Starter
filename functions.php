@@ -7,6 +7,7 @@
  * @package DevriX_Starter
  */
 
+require get_template_directory() . '/inc/theme-version.php';
 
 /**
  * Implement the Custom Header feature.
@@ -165,14 +166,15 @@ function dxstarter_scripts() {
 	}
 
 	// Enqueue the only styling file here that is build with Gulp
-	wp_enqueue_style( 'stylesheet', get_template_directory_uri() . '/assets/css/master' . $suffix . '.css' );
+	wp_enqueue_style( 'stylesheet', get_template_directory_uri() . '/assets/css/master' . $suffix . '.css', array(), DX_ASSETS_VERSION );
 	
+	// Sometimes you need to add a few quick changes without using Gulp/Sass, right? :)
 	if ( true === WP_DEBUG ) {
-		wp_enqueue_style( 'temp', get_template_directory_uri() . '/assets/css/bozo-devs' . $suffix . '.css' );
+	    wp_enqueue_style( 'temp', get_template_directory_uri() . '/assets/css/bozo-devs' . $suffix . '.css', array(), DX_ASSETS_VERSION );
 	}
 	
 	// And the only JS file that is build with Gulp
-	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/scripts/bundle' . $suffix . '.js', array( "jquery" ), '20170204', true );
+	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/scripts/bundle' . $suffix . '.js', array( "jquery" ), DX_ASSETS_VERSION, true );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
