@@ -75,11 +75,11 @@ Icon            # Icon must end with two \r
 .idea/mongoSettings.xml
 
 # NetBeans generated folders and files
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
+./nbproject/private/
+./build/
+./nbbuild/
+./dist/
+./nbdist/
 .nb-gradle/
 
 # File-based project format:

@@ -1,17 +1,12 @@
-/**
- * DX MOBILE MENU
- * ============================================================================
- * Basic styling and settings for the mobile menu. Edit to match each theme's
- * design. 
- *
- * @version 1.1
- */
+// DX MOBILE MENU
+// ============================================================================
+// Basic styling and settings for the mobile menu. Edit to match each theme's
+// design.
+// @version 1.1
 
-/**
- * VARIABLES
- * ============================================================================
- * Setting the menu default variables for easier tweaks.
- */
+// VARIABLES
+// ============================================================================
+// Setting the menu default variables for easier tweaks.
 $menu-allow-animation: true;
 $menu-breakpoint: $breakpoint-small;
 
@@ -42,19 +37,15 @@ $submenu-safe-zone: 16px;
 $menu-dropdown-arrow-line-height: 1.7;
 $menu-dropdown-arrow-size: 20px;
 
-/**
- * Needs to be used when the mobile menu covers the whole screen while opened
- * and its possible to scroll inside the menu while maitaining the wrapper element's
- * positioning. Keep commented out by default.
- */
-body.is-menu-opened {
-	// overflow: hidden;
-}
+// Needs to be used when the mobile menu covers the whole screen while opened
+// and its possible to scroll inside the menu while maitaining the wrapper element's
+// positioning. Keep commented out by default.
+// body.is-menu-opened {
+// 	overflow: hidden;
+// }
 
-/**
- * Primary navigation base styling.
- * ============================================================================
- */
+// Primary navigation base styling.
+// ============================================================================
 .main-navigation {
 	display: inline-block;
 
@@ -86,10 +77,10 @@ body.is-menu-opened {
 			color: $menu-item-color;
 		}
 	}
-	
-	/**
-	 * Begin the mobile menu styling.
-	 */
+
+
+	// Begin the mobile menu styling.
+
 	@media (max-width: $menu-breakpoint) {
 
 		.menu-item {
@@ -128,9 +119,7 @@ body.is-menu-opened {
 	float: right;
 }
 
-/**
- * Displaying the mobile menu on click.
- */
+// Displaying the mobile menu on click.
 @media (max-width: $menu-breakpoint) {
 	.menu-primary-container {
 		display: none;
@@ -154,9 +143,7 @@ body.is-menu-opened {
 	}
 }
 
-/**
- * Starts the standard desktop menu styling.
- */
+// Starts the standard desktop menu styling.
 @media (min-width: $menu-breakpoint) {
 	.menu-primary-container {
 		display: block;
@@ -250,10 +237,8 @@ body.is-menu-opened {
 	}
 }
 
-/**
- * Styling the dropdown-arrow element. It takes more properties
- * so its in separate module here in the file.
- */
+// Styling the dropdown-arrow element. It takes more properties
+// so its in separate module here in the file.
 .menu-item-has-children {
 	position: relative;
 
@@ -264,9 +249,9 @@ body.is-menu-opened {
 		font-family: FontAwesome;
 		display: inline-block;
 		position: absolute;
-		top: 0; 
+		top: 0;
 		right: 0;
-		text-align: center; 
+		text-align: center;
 		vertical-align: middle;
 		cursor: pointer;
 
@@ -275,7 +260,7 @@ body.is-menu-opened {
 		font-size: $menu-dropdown-arrow-size;
 
 		// Disable select while clicking
-		&, 
+		&,
 		& i {
 			user-select: none;
 		}
