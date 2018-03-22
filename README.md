@@ -2,7 +2,7 @@
 
 ### Exporting to WordPress.org compilant zip file
 
-To export your development files to the WordPress.org requirements run the following command: `bash zip.sh path/name.zip`. We can suggest you to suffix your zip file with the version of your theme. Example: `../dx-starter-1.0.0.zip`
+To export your development files to the WordPress.org requirements run the following command: `bash zip.sh path/name.zip` or `npm run ziptheme path/name.zip`. We can suggest you to suffix your zip file with the version of your theme. Example: `../dx-starter-1.0.0.zip`
 
 ### .gitignore
 
