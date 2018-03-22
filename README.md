@@ -44,5 +44,9 @@ If you have `sass` command installed, you can run `sass --watch assets/sass/mast
 
 The theme is not 100% ready as there are still small changes to be made in the future. Some of the todos are renaming some of the scss files, better js compile/minification and imgming scripts. That is what's on the radar for now, most likley there will be more to be added/changed. If you have any ideas feel free to open an issue !
 
+### DX Stability Framework
+
+Inside the `header.php` file you will find this meta tag: `<meta property="dxcheck:online" content="true" />`. We use it to track our sites, you might want to remove it for your projects. If you need more information, make sure to open an issue.
+
 ## Sass linter
 Documentation for the Sass linter can be [seen here.](https://github.com/sasstools/sass-lint) It will be failing on !important rule, so try to find a better way to write your stylings. If that's still impossible add `// sass-lint:disable-line no-important` on the line where you've set it.
