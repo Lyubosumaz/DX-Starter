@@ -5457,9 +5457,6 @@ readers do not read off random characters that represent icons */
   height: 100%;
   width: 100%; }
 
-body {
-  background: red !important; }
-
 .row.narrow {
   max-width: 800px; }
 
