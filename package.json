@@ -12,6 +12,7 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-babel": "^7.0.1",
+    "gulp-clean-css": "^3.9.3",
     "gulp-concat": "^2.6.0",
     "gulp-cssmin": "^0.1.7",
     "gulp-imagemin": "^3.0.1",
@@ -40,5 +41,9 @@
     "presets": [
       "es2015"
     ]
+  },
+  "dependencies": {
+    "gulp-filter": "^5.1.0",
+    "npm": "^5.8.0"
   }
 }
