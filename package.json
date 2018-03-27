@@ -1,6 +1,6 @@
 {
   "name": "dxstarter",
-  "version": "1.2.1",
+  "version": "1.4.0",
   "description": "Quick settings for developing themes.",
   "main": "Gulpfile.js",
   "sasslintConfig": ".sass-lint.yml",
