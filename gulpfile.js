@@ -7,7 +7,7 @@ let gulp = require("gulp"),
 	notify = require("gulp-notify"),
 	uglify = require("gulp-uglify"),
 	concat = require("gulp-concat"),
-	cssmin = require("gulp-cssmin"),
+	cleanCSS = require("gulp-clean-css"),
 	rename = require("gulp-rename"),
 	imagemin = require("gulp-imagemin"),
 	del = require("del"),
@@ -54,13 +54,7 @@ gulp.task("sass", function() {
 	.pipe(sassLint.failOnError())
 	.pipe(sass().on("error", sass.logError))
 	.pipe(autoprefixer())
-	// .pipe(sourcemaps.write("./"))
-	.pipe(sourcemaps.write("./", {
-		mapFile: function(mapFilePath) {
-			// source map files are named *.map instead of *.js.map
-			return mapFilePath.replace('.css.map', '.min.css.map');
-		}
-	}))
+	.pipe(sourcemaps.write('./'))
 	.pipe(gulp.dest(paths.destination.css))
 	.pipe(notify({
 		onLast: true,
@@ -69,18 +63,15 @@ gulp.task("sass", function() {
 	}));
 });
 
-gulp.task("cssmin", function() {
+gulp.task("cssmin", ['sass'], function() {
 	gulp
 	.src(paths.destination.css + "master.css")
-	.pipe(sourcemaps.init())
-	.pipe(cssmin())
+	.pipe(sourcemaps.init({ loadMaps: true }))
+	.pipe(cleanCSS({compatibility: 'ie8'}))
 	.pipe(rename({ suffix: ".min" }))
+	.pipe(sourcemaps.write('./'))
 	.pipe(gulp.dest(paths.destination.css))
 	.pipe(notify({ message: "Successfully minified master.min.css" }))
-	.pipe(sourcemaps.write("./"))
-	.pipe(gulp.dest(paths.destination.css))
-	.pipe(rename({ suffix: ".min" }))
-	.pipe(notify({ message: "Sucessfully mapped master.min.css"}));
 });
 
 // The files to be watched for minifying. If more dev js files are added this
