@@ -1,14 +1,15 @@
 "use strict";
 
-var questions = require("base-questions");
-var assemble = require("assemble-core");
-var store = require("base-store");
-var replace = require("replace-in-file");
-var argv = require("minimist")(process.argv.slice(2), {
+const questions = require("base-questions");
+const assemble = require("assemble-core");
+const store = require("base-store");
+const replace = require("replace-in-file");
+const argv = require("minimist")(process.argv.slice(2), {
 	alias: { init: "i", force: "f" }
 });
 
-var app = assemble();
+let app = assemble();
+
 app.use(store());
 app.use(questions(argv));
 
@@ -31,63 +32,46 @@ app.ask(function(err, answers) {
 function validateAnswers(answers) {
 	console.log(answers);
 
-	let options = {
-		files: "./**/*",
-		from: /DevriX Starter/g,
-		to: answers.project.name,
-		ignore: [
-			"node_modules/**/*",
-			"node_modules",
-			"./node_modules/",
-			"../node_modules"
-		],
-		dry: true
-	};
+	let options = [
+		{
+			files: "**/*",
+			from: /DevriX Starter/g,
+			to: answers.project.name,
+			ignore: [
+				'utility-scripts/configure.js',
+				'node_modules/**/*',
+			],
+			dry: true
+		},
+		{
+			files: "**/*",
+			from: /DevriX_Starter/g,
+			to: answers.project.package,
+			ignore: [
+				'utility-scripts/configure.js',
+				'node_modules/**/*',
+			],
+			dry: true
+		},
+		{
+			files: "**/*",
+			from: /dxstarter/g,
+			to: answers.project.local,
+			ignore: [
+				'utility-scripts/configure.js',
+				'node_modules/**/*',
+			],
+			dry: true
+		},
+	];
 
-	try {
-		const changes = replace.sync(options);
-		console.log("Modified files:", changes.join(", "));
-	} catch (error) {
-		console.error("Error occurred:", error);
-	}
-
-	options = {
-		files: "./**/*",
-		from: /DevriX_Starter/g,
-		to: answers.project.package,
-		ignore: [
-			"node_modules/**/*",
-			"node_modules",
-			"./node_modules/",
-			"../node_modules"
-		],
-		dry: true
-	};
-
-	try {
-		const changes = replace.sync(options);
-		console.log("Modified files:", changes.join(", "));
-	} catch (error) {
-		console.error("Error occurred:", error);
-	}
-
-	options = {
-		files: "./**/*",
-		from: /dxstarter/g,
-		to: answers.project.local,
-		ignore: [
-			"node_modules/**/*",
-			"node_modules",
-			"./node_modules/",
-			"../node_modules"
-		],
-		dry: true
-	};
-
-	try {
-		const changes = replace.sync(options);
-		console.log("Modified files:", changes.join(", "));
-	} catch (error) {
-		console.error("Error occurred:", error);
-	}
+	// Go through all options
+	options.forEach(function(option) {
+		try {
+			const changes = replace.sync(option);
+			console.log("Modified files:", changes.join(", "));
+		} catch (error) {
+			console.error("Error occurred:", error);
+		}
+	});
 }
