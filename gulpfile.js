@@ -63,7 +63,7 @@ gulp.task("sass", function() {
 	}));
 });
 
-gulp.task("cssmin", ['sass'], function() {
+gulp.task("cssmin", function() {
 	gulp
 	.src(paths.destination.css + "master.css")
 	.pipe(sourcemaps.init({ loadMaps: true }))
@@ -76,7 +76,7 @@ gulp.task("cssmin", ['sass'], function() {
 
 // The files to be watched for minifying. If more dev js files are added this
 // will have to be updated.
-gulp.task("watch", ["sass"], function() {
+gulp.task("watch", function() {
 	livereload.listen();
 
 	gulp.watch(paths.source.sass + "**/*.scss", ["sass"]);
