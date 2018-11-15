@@ -15,7 +15,8 @@ let gulp = require("gulp"),
 	sassLint = require("gulp-sass-lint"),
 	newer = require("gulp-newer"),
 	sourcemaps = require("gulp-sourcemaps"),
-	babel = require("gulp-babel");
+	babel = require("gulp-babel"),
+	plumber = require("gulp-plumber");
 
 /**
 * Unify all scripts to work with source and destination paths.
@@ -95,6 +96,12 @@ gulp.task("minifyScripts", function() {
 		paths.source.scripts + "inc/*.js",
 		paths.source.scripts + "scripts.js"
 	])
+	.pipe(plumber({
+		handleError: function (error) {
+			console.log(error);
+			this.emit('end');
+		}
+	}))
 	.pipe(babel())
 	.pipe(concat("bundle.min.js"))
 	.pipe(uglify())
