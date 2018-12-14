@@ -65,14 +65,14 @@ gulp.task("sass", function() {
 });
 
 gulp.task("cssmin", function() {
-	gulp
+	return gulp
 	.src(paths.destination.css + "master.css")
 	.pipe(sourcemaps.init({ loadMaps: true }))
 	.pipe(cleanCSS({compatibility: 'ie8'}))
 	.pipe(rename({ suffix: ".min" }))
 	.pipe(sourcemaps.write('./'))
 	.pipe(gulp.dest(paths.destination.css))
-	.pipe(notify({ message: "Successfully minified master.min.css" }))
+	.pipe(notify({ message: "Successfully minified master.min.css",onLast: true }))
 });
 
 // The files to be watched for minifying. If more dev js files are added this
@@ -80,9 +80,9 @@ gulp.task("cssmin", function() {
 gulp.task("watch", function() {
 	livereload.listen();
 
-	gulp.watch(paths.source.sass + "**/*.scss", ["sass"]);
-	gulp.watch(paths.source.scripts + "**/*.js", ["minifyScripts"]);
-	gulp.watch(paths.source.images + "*", ["optimizeImages"]);
+	gulp.watch(paths.source.sass + "**/*.scss", gulp.series("sass"));
+	gulp.watch(paths.source.scripts + "**/*.js", gulp.series("minifyScripts"));
+	gulp.watch(paths.source.images + "*", gulp.series("optimizeImages"));
 
 	// Once the CSS file is build, minify it.
 	gulp.watch(paths.destination.css + "master.css", ["cssmin"]);
@@ -90,7 +90,7 @@ gulp.task("watch", function() {
 
 gulp.task("minifyScripts", function() {
 	// Add separate folders if required.
-	gulp
+	return gulp
 	.src([
 		paths.source.scripts + "vendor/*.js",
 		paths.source.scripts + "inc/*.js",
@@ -102,7 +102,9 @@ gulp.task("minifyScripts", function() {
 			this.emit('end');
 		}
 	}))
-	.pipe(babel())
+	.pipe(babel({
+		presets: ['es2015']
+	}))
 	.pipe(concat("bundle.min.js"))
 	.pipe(uglify())
 	.pipe(gulp.dest(paths.destination.scripts));
@@ -110,7 +112,7 @@ gulp.task("minifyScripts", function() {
 
 gulp.task("optimizeImages", function() {
 	// Add separate folders if required.
-	gulp
+	return gulp
 		.src(paths.source.images + "*")
 		.pipe(newer(paths.destination.images))
 		.pipe(imagemin())
@@ -139,13 +141,13 @@ gulp.task("reset", function() {
 });
 
 // What will be run with simply writing "$ gulp"
-gulp.task("default", [
-	"sass",
-	"watch",
-	"minifyScripts",
-	"cssmin",
-	"optimizeImages"
-]);
+gulp.task("default", 
+	gulp.series("sass",
+		gulp.parallel("minifyScripts",
+					  "cssmin",
+					  "optimizeImages"),	
+				),
+	gulp.series("watch"));
 
 // Print the current date formatted. Used for the script compile notify messages.
 function getFormatDate() {
