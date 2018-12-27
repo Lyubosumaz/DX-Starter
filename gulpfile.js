@@ -85,7 +85,7 @@ gulp.task("watch", function() {
 	gulp.watch(paths.source.images + "*", gulp.series("optimizeImages"));
 
 	// Once the CSS file is build, minify it.
-	gulp.watch(paths.destination.css + "master.css", ["cssmin"]);
+	gulp.watch(paths.destination.css + "master.css", gulp.series("cssmin"));
 });
 
 gulp.task("minifyScripts", function() {
@@ -145,9 +145,10 @@ gulp.task("default",
 	gulp.series("sass",
 		gulp.parallel("minifyScripts",
 					  "cssmin",
-					  "optimizeImages"),	
-				),
-	gulp.series("watch"));
+					  "optimizeImages"),
+		"watch"	
+	)
+);
 
 // Print the current date formatted. Used for the script compile notify messages.
 function getFormatDate() {
