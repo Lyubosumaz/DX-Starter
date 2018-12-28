@@ -16,6 +16,7 @@
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^7.0.1",
     "gulp-clean-css": "^4.0.0",
+    "gulp-cli": "^2.0.1",
     "gulp-concat": "^2.6.1",
     "gulp-cssmin": "^0.2.0",
     "gulp-imagemin": "^5.0.3",
@@ -36,7 +37,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "gulp": "./node_modules/.bin/gulp",
     "ziptheme": "bash zip.sh",
-    "ver": "node assets-version.js"
+    "ver": "node assets-version.js",
+    "hello": "echo \"Hello\" ",
+    "projectConf": "sudo npm i -g gulp-cli gulp && echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p"
   },
   "author": "DevriX",
   "license": "ISC",
