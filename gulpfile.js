@@ -103,7 +103,7 @@ gulp.task("minifyScripts", function() {
 		}
 	}))
 	.pipe(babel({
-		presets: ['es2015']
+		presets: ['@babel/preset-env']
 	}))
 	.pipe(concat("bundle.min.js"))
 	.pipe(uglify())
