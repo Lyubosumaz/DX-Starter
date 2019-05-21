@@ -17,7 +17,6 @@
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
-    "gulp-cssmin": "^0.2.0",
     "gulp-imagemin": "^5.0.3",
     "gulp-livereload": "^4.0.1",
     "gulp-newer": "^1.4.0",
@@ -30,7 +29,8 @@
     "gulp-uglify": "^3.0.2",
     "moment": "^2.24.0",
     "replace-in-file": "^4.1.0",
-    "sass-lint": "^1.13.1"
+    "sass-lint": "^1.13.1",
+    "gulp-filter": "^5.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -47,9 +47,5 @@
     "presets": [
       "@babel/preset-env"
     ]
-  },
-  "dependencies": {
-    "gulp-filter": "^5.1.0",
-    "npm": "^6.9.0"
   }
 }
