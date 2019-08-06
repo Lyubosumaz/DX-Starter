@@ -15,5 +15,5 @@
  */
 
 if ( ! defined( 'DX_ASSETS_VERSION' ) ) {
-	define( 'DX_ASSETS_VERSION', '20190806-7' );
+	define( 'DX_ASSETS_VERSION', '20190806-8' );
 }
