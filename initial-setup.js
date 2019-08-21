@@ -31,7 +31,7 @@ replace({
 replace({
     regex: "dx-starter",
     replacement: lowercaseHyphen,
-    paths: ['./inc/.'],
+    paths: ['.'],
     recursive: true,
     silent: true,
     exclude: 'initial-setup.js'
@@ -40,7 +40,7 @@ replace({
 replace({
     regex: "DX Starter",
     replacement: uppercase,
-    paths: ['./inc/.'],
+    paths: ['.'],
     recursive: true,
     silent: true,
     exclude: 'initial-setup.js'
@@ -49,9 +49,8 @@ replace({
 replace({
     regex: "DX_Starter",
     replacement: uppercaseUnderscore,
-    paths: ['./inc/.'],
+    paths: ['.'],
     recursive: true,
     silent: true,
     exclude: 'initial-setup.js'
 });
-
