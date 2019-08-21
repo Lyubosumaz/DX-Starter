@@ -37,6 +37,7 @@
     "gulp": "./node_modules/.bin/gulp",
     "ziptheme": "bash zip.sh",
     "ver": "node assets-version.js",
+    "setupd": "node initial-setup.js",
     "hello": "echo \"Hello\" ",
     "projectConf": "sudo npm i -g gulp-cli gulp && echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p"
   },
@@ -47,5 +48,8 @@
     "presets": [
       "@babel/preset-env"
     ]
+  },
+  "dependencies": {
+    "replace": "^1.1.1"
   }
 }
