@@ -174,7 +174,7 @@ function dxstarter_scripts() {
 	}
 
 	// And the only JS file that is build with Gulp
-	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/dist/scripts/bundle' . $suffix . '.js', array( "jquery" ), DX_ASSETS_VERSION, true );
+	wp_enqueue_script( 'dxStarter-scripts', get_template_directory_uri() . '/assets/dist/scripts/bundle' . $suffix . '.js', array( "jquery" ), DX_ASSETS_VERSION, true );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -190,3 +190,16 @@ function dxstarter_remove_html_margin() {
 	remove_action( 'wp_head', '_admin_bar_bump_cb' );
 }
 add_action( 'get_header', 'dxstarter_remove_html_margin' );
+
+function register_service_worker () {
+	echo
+	'<script>
+		// Check that service workers are supported
+		if ( typeof navigator.serviceWorker !== "undefined" ) {
+			// Use the window load event to keep the page load performant
+			navigator.serviceWorker.register("' . get_template_directory_uri() . '/sw.js", {scope: "//local.dx.com/wp-content/themes/dx-starter/assets/"});
+		}
+	</script>';
+}
+
+add_action ( 'wp_head', 'register_service_worker' );

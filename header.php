@@ -17,7 +17,6 @@
 
 <?php // DXCheck is used to monitor our sites with our internal tools. Remove this if you don't need it ?>
 <meta property="dxcheck:online" content="true" />
-
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
