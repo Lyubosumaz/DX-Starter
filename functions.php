@@ -7,7 +7,9 @@
  * @package DevriX_Starter
  */
 
-require get_template_directory() . '/inc/theme-version.php';
+// Dynamic grab master CSS mod time.
+$master_modified_time = filemtime( get_theme_file_path() . '/assets/dist/css/master.min.css' );
+define( 'DX_ASSETS_VERSION', $master_modified_time . '-0000' );
 
 /**
  * Implement the Custom Header feature.
