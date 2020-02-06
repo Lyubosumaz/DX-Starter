@@ -40,40 +40,40 @@ const paths = {
 
 gulp.task("sass", function() {
 	return gulp
-	.src(paths.source.sass + "**/*.scss")
-	.pipe(sourcemaps.init())
-	.pipe(sassLint({
-		files: {
-			ignore: [
-				paths.source.sass + "/base/_normalize.scss",
-				paths.source.sass + "/modularscale/**/*.scss",
-				paths.source.sass + "/foundation/**/*.scss",
-				paths.source.sass + "/font-awesome/**/*.scss"
-			]
-		}
-	}))
-	.pipe(sassLint.format())
-	.pipe(sassLint.failOnError())
-	.pipe(sass().on("error", sass.logError))
-	.pipe(autoprefixer())
-	.pipe(sourcemaps.write('./'))
-	.pipe(gulp.dest(paths.destination.css))
-	.pipe(notify({
-		onLast: true,
-		title: "Sass compiled successfully.",
-		message: getFormatDate()
-	}));
+		.src(paths.source.sass + "**/*.scss")
+		.pipe(sourcemaps.init())
+		.pipe(sassLint({
+			files: {
+				ignore: [
+					paths.source.sass + "/base/_normalize.scss",
+					paths.source.sass + "/modularscale/**/*.scss",
+					paths.source.sass + "/foundation/**/*.scss",
+					paths.source.sass + "/font-awesome/**/*.scss"
+				]
+			}
+		}))
+		.pipe(sassLint.format())
+		.pipe(sassLint.failOnError())
+		.pipe(sass().on("error", sass.logError))
+		.pipe(autoprefixer())
+		.pipe(sourcemaps.write('./'))
+		.pipe(gulp.dest(paths.destination.css))
+		.pipe(notify({
+			onLast: true,
+			title: "Sass compiled successfully.",
+			message: getFormatDate()
+		}));
 });
 
 gulp.task("cssmin", function() {
 	return gulp
-	.src(paths.destination.css + "master.css")
-	.pipe(sourcemaps.init({ loadMaps: true }))
-	.pipe(cleanCSS({compatibility: 'ie8'}))
-	.pipe(rename({ suffix: ".min" }))
-	.pipe(sourcemaps.write('./'))
-	.pipe(gulp.dest(paths.destination.css))
-	.pipe(notify({ message: "Successfully minified master.min.css",onLast: true }))
+		.src(paths.destination.css + "master.css")
+		.pipe(sourcemaps.init({ loadMaps: true }))
+		.pipe(cleanCSS({ compatibility: 'ie8' }))
+		.pipe(rename({ suffix: ".min" }))
+		.pipe(sourcemaps.write('./'))
+		.pipe(gulp.dest(paths.destination.css))
+		.pipe(notify({ message: "Successfully minified master.min.css", onLast: true }))
 });
 
 // The files to be watched for minifying. If more dev js files are added this
@@ -92,23 +92,23 @@ gulp.task("watch", function() {
 gulp.task("minifyScripts", function() {
 	// Add separate folders if required.
 	return gulp
-	.src([
-		paths.source.scripts + "vendor/*.js",
-		paths.source.scripts + "inc/*.js",
-		paths.source.scripts + "scripts.js"
-	])
-	.pipe(plumber({
-		handleError: function (error) {
-			console.log(error);
-			this.emit('end');
-		}
-	}))
-	.pipe(babel({
-		presets: ['@babel/preset-env']
-	}))
-	.pipe(concat("bundle.min.js"))
-	.pipe(uglify())
-	.pipe(gulp.dest(paths.destination.scripts));
+		.src([
+			paths.source.scripts + "vendor/*.js",
+			paths.source.scripts + "inc/*.js",
+			paths.source.scripts + "scripts.js"
+		])
+		.pipe(plumber({
+			handleError: function (error) {
+				console.log(error);
+				this.emit('end');
+			}
+		}))
+		.pipe(babel({
+			presets: ['@babel/preset-env']
+		}))
+		.pipe(concat("bundle.min.js"))
+		.pipe(uglify())
+		.pipe(gulp.dest(paths.destination.scripts));
 });
 
 gulp.task("optimizeImages", function() {
@@ -121,9 +121,9 @@ gulp.task("optimizeImages", function() {
 });
 
 gulp.task("optimizeFonts", function() {
-	gulp
-	.src(paths.source.fonts + "*")
-	.pipe(gulp.dest(paths.destination.fonts));
+	return gulp
+		.src(paths.source.fonts + "*")
+		.pipe(gulp.dest(paths.destination.fonts));
 });
 
 // This will take care of rights permission errors if any
@@ -142,11 +142,14 @@ gulp.task("reset", function() {
 });
 
 // What will be run with simply writing "$ gulp"
-gulp.task("default", 
+gulp.task("default",
 	gulp.series("sass",
-		gulp.parallel("minifyScripts",
+		gulp.series([
+			"minifyScripts",
+			"optimizeImages",
+			"optimizeFonts",
 			"cssmin",
-			"optimizeImages"),
+		]),
 		"watch"
 	)
 );
@@ -154,4 +157,4 @@ gulp.task("default",
 // Print the current date formatted. Used for the script compile notify messages.
 function getFormatDate() {
 	return moment().format("LTS");
-}
+};
