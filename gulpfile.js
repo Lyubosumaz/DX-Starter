@@ -121,8 +121,12 @@ gulp.task("optimizeImages", function() {
 });
 
 gulp.task("optimizeFonts", function() {
+	// Directory of the stable in-built version of the Font Awesome Free 5.6.3:
+	// .src(paths.source.fonts + "*")
+	// Directory of the up to date Font Awesome Free:
+	// .src('node_modules/@fortawesome/fontawesome-free/webfonts/*')
 	return gulp
-		.src(paths.source.fonts + "*")
+		.src('node_modules/@fortawesome/fontawesome-free/webfonts/*')
 		.pipe(gulp.dest(paths.destination.fonts));
 });
 
